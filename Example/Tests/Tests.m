@@ -2,8 +2,8 @@
 //  LDOLayoutVariationsTests.m
 //  LDOLayoutVariationsTests
 //
-//  Created by sebastian@lurado.de on 03/13/2017.
-//  Copyright (c) 2017 sebastian@lurado.de. All rights reserved.
+//  Created by Sebastian Ludwig on 13.03.2017.
+//  Copyright (c) 2017 Julian Raschke und Sebastian Ludwig GbR. All rights reserved.
 //
 
 @import XCTest;
