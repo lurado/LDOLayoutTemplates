@@ -7,8 +7,13 @@
 //
 
 #import "LDOViewController.h"
+@import LDOLayoutVariations;
 
 @interface LDOViewController ()
+
+@property (nonatomic) LDOLayoutVariation *initialState;
+@property (nonatomic, weak) IBOutlet LDOLayoutVariation *firstLayoutVariation;
+@property (nonatomic, weak) IBOutlet LDOLayoutVariation *secondLayoutVariation;
 
 @end
 
@@ -17,13 +22,42 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.initialState = [LDOLayoutVariation layoutVariationForCurrentStateBasedOnVariation:self.firstLayoutVariation];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)applyLayoutVariation:(LDOLayoutVariation *)variation
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.view layoutIfNeeded];
+    
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         [variation apply];
+                         
+                         [self.view layoutIfNeeded];
+                     }];
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
+        [self applySecond];
+    }
+}
+
+- (IBAction)reset
+{
+    [self applyLayoutVariation:self.initialState];
+}
+
+- (IBAction)applyFirst
+{
+    [self applyLayoutVariation:self.firstLayoutVariation];
+}
+
+- (IBAction)applySecond
+{
+    [self applyLayoutVariation:self.secondLayoutVariation];
 }
 
 @end

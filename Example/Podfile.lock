@@ -1,0 +1,16 @@
+PODS:
+  - LDOLayoutVariations (0.1.0)
+
+DEPENDENCIES:
+  - LDOLayoutVariations (from `../`)
+
+EXTERNAL SOURCES:
+  LDOLayoutVariations:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LDOLayoutVariations: 1060f18b89c68d7f0f519ac13913989fd59f9a27
+
+PODFILE CHECKSUM: 0b5f500ff1c3fa7f64ba76e8d982cbc03fba168e
+
+COCOAPODS: 1.2.0

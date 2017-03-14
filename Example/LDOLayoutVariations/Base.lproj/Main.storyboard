@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,14 +19,129 @@
                         <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yE1-mp-2Kg">
+                                <rect key="frame" x="296" y="582" width="30" height="30"/>
+                                <state key="normal" title="first"/>
+                                <connections>
+                                    <action selector="applyFirst" destination="whP-gf-Uak" eventType="touchUpInside" id="Jf5-VX-FQT"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZa-s1-dXa">
+                                <rect key="frame" x="16" y="519" width="240" height="128"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="5cw-rM-aYf"/>
+                                    <constraint firstAttribute="width" constant="240" id="pe0-lU-3og"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l49-cZ-Pzg">
+                                <rect key="frame" x="20" y="20" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="reset" destination="whP-gf-Uak" eventType="touchUpInside" id="cPF-1c-1T3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsI-z7-UqF">
+                                <rect key="frame" x="18" y="58" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="second"/>
+                                <connections>
+                                    <action selector="applySecond" destination="whP-gf-Uak" eventType="touchUpInside" id="ugJ-Dp-L58"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="TZa-s1-dXa" secondAttribute="bottom" constant="20" id="Ejt-hx-NpZ"/>
+                            <constraint firstItem="l49-cZ-Pzg" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="20" id="KSu-aR-mAF"/>
+                            <constraint firstItem="l49-cZ-Pzg" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" id="RGu-tK-uxs"/>
+                            <constraint firstAttribute="trailing" secondItem="yE1-mp-2Kg" secondAttribute="trailing" constant="49" id="d6C-jH-3pe"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="TZa-s1-dXa" secondAttribute="leading" id="tQ0-o1-Mla"/>
+                            <constraint firstAttribute="bottom" secondItem="yE1-mp-2Kg" secondAttribute="bottom" constant="55" id="tgD-qU-NUC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstLayoutVariation" destination="9xG-sC-QFc" id="b9B-pf-W61"/>
+                        <outlet property="secondLayoutVariation" destination="rem-WP-CuH" id="fem-FA-AV0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="9xG-sC-QFc" customClass="LDOLayoutVariation">
+                    <connections>
+                        <outlet property="destinationView" destination="TpU-gO-2f1" id="cDo-Mu-uAx"/>
+                        <outlet property="templateView" destination="6s9-Sz-gIn" id="EqP-8j-ngI"/>
+                    </connections>
+                </customObject>
+                <customObject id="rem-WP-CuH" customClass="LDOLayoutVariation">
+                    <connections>
+                        <outlet property="destinationView" destination="TpU-gO-2f1" id="zdI-n8-0qc"/>
+                        <outlet property="templateView" destination="YoY-kB-NBA" id="Tvz-M0-E2L"/>
+                    </connections>
+                </customObject>
+                <view contentMode="scaleToFill" id="6s9-Sz-gIn" customClass="LDOLayoutVariationView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3X8-wx-jwJ" customClass="LDOLayoutVariationButton">
+                            <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <outlet property="targetView" destination="yE1-mp-2Kg" id="EyC-ST-9ez"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyQ-zS-8QG" customClass="LDOLayoutVariationView">
+                            <rect key="frame" x="247" y="439" width="120" height="200"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="3Lk-R5-LaH"/>
+                                <constraint firstAttribute="width" constant="120" id="gfP-nk-QSX"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="targetView" destination="TZa-s1-dXa" id="EM6-du-zDb"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottomMargin" secondItem="qyQ-zS-8QG" secondAttribute="bottom" constant="20" id="PwB-eI-29D"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="qyQ-zS-8QG" secondAttribute="trailing" id="SZL-R4-6qA"/>
+                        <constraint firstItem="3X8-wx-jwJ" firstAttribute="centerX" secondItem="6s9-Sz-gIn" secondAttribute="centerX" id="oTv-qW-uYJ"/>
+                        <constraint firstItem="3X8-wx-jwJ" firstAttribute="centerY" secondItem="6s9-Sz-gIn" secondAttribute="centerY" id="rtn-Et-sH1"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="targetView" destination="TpU-gO-2f1" id="kBU-1g-Bw0"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="YoY-kB-NBA" customClass="LDOLayoutVariationView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjg-dL-Fkq" customClass="LDOLayoutVariationView">
+                            <rect key="frame" x="247" y="40" width="120" height="200"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="tNY-uF-xAe"/>
+                                <constraint firstAttribute="width" constant="120" id="uq9-fZ-dsm"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="targetView" destination="TZa-s1-dXa" id="4AK-l0-Seb"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Fjg-dL-Fkq" firstAttribute="top" secondItem="YoY-kB-NBA" secondAttribute="top" constant="40" id="DY7-1w-GRQ"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="Fjg-dL-Fkq" secondAttribute="trailing" id="NCf-h0-sEH"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="targetView" destination="TpU-gO-2f1" id="XQ6-PE-fxp"/>
+                    </connections>
+                </view>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="304.80000000000001" y="432.23388305847078"/>
         </scene>
     </scenes>
 </document>
