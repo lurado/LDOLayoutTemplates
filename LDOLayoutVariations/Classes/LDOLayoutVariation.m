@@ -69,6 +69,15 @@
     return currentState;
 }
 
+- (NSSet<UIView<LDOVariationView> *> *)collectVariationViews
+{
+    NSMutableSet<UIView<LDOVariationView> *> *variationViews = [NSMutableSet new];
+    
+    [self collectVariationViewsInto:variationViews startingWith:self.templateView];
+    
+    return [variationViews copy];
+}
+
 - (void)collectVariationViewsInto:(NSMutableSet<UIView<LDOVariationView> *> *)set startingWith:(UIView<LDOVariationView> *)view
 {
     if ([[view class] conformsToProtocol:@protocol(LDOVariationView)] && view.targetView) {
@@ -78,15 +87,6 @@
     for (UIView *subview in view.subviews) {
         [self collectVariationViewsInto:set startingWith:subview];
     }
-}
-
-- (NSSet<UIView<LDOVariationView> *> *)collectVariationViews
-{
-    NSMutableSet<UIView<LDOVariationView> *> *variationViews = [NSMutableSet new];
-    
-    [self collectVariationViewsInto:variationViews startingWith:self.templateView];
-    
-    return [variationViews copy];
 }
 
 - (NSSet<UIView *> *)targetViewsFrom:(NSSet<UIView<LDOVariationView> *> *)variationViews
@@ -125,13 +125,16 @@
     return [constraints copy];
 }
 
-// TODO:
-// - attributes (hidden, alpha, ..)
-
 - (void)apply
 {
     NSSet<UIView<LDOVariationView> *> *variationViews = [self collectVariationViews];
     
+    [self applyConstraints:variationViews];
+    [self applyStyles:variationViews];
+}
+
+- (void)applyConstraints:(NSSet<UIView<LDOVariationView> *> *)variationViews
+{
     NSSet<UIView *> *targetViews = [self targetViewsFrom:variationViews];
     
     // collect all constraints between target views (to be deactivated)
@@ -157,6 +160,15 @@
     
     [NSLayoutConstraint deactivateConstraints:currentConstraints];
     [NSLayoutConstraint activateConstraints:newConstraints];
+}
+
+- (void)applyStyles:(NSSet<UIView<LDOVariationView> *> *)variationViews
+{
+    for (UIView<LDOVariationView> *variationView in variationViews) {
+        UIView *target = variationView.targetView;
+        
+        target.alpha = variationView.alpha;
+    }
 }
 
 @end
