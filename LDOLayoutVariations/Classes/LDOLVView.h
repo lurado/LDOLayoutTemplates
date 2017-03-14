@@ -1,5 +1,5 @@
 //
-//  LDOLayoutVariationView.h
+//  LDOLVView.h
 //  LDOLayoutVariations
 //
 //  Created by Sebastian Ludwig on 13.03.2017.
@@ -7,9 +7,9 @@
 //
 
 @import UIKit;
-#import "LDOVariationView.h"
+#import "LDOTargetingView.h"
 
-@interface LDOLayoutVariationView : UIView <LDOVariationView>
+@interface LDOLVView : UIView <LDOTargetingView>
 
 @property (nonatomic, weak) IBOutlet UIView *targetView;
 

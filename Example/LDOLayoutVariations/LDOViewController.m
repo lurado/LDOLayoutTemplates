@@ -23,7 +23,7 @@
 {
     [super viewDidLoad];
     
-    self.initialState = [LDOLayoutVariation layoutVariationForCurrentStateBasedOnVariation:self.firstLayoutVariation];
+    //self.initialState = [LDOLayoutVariation layoutVariationForCurrentStateBasedOnVariation:self.firstLayoutVariation];
 }
 
 - (void)applyLayoutVariation:(LDOLayoutVariation *)variation
@@ -32,7 +32,7 @@
     
     [UIView animateWithDuration:0.3
                      animations:^{
-                         [variation apply];
+                         [variation applyInViewController:self];
                          
                          [self.view layoutIfNeeded];
                      }];

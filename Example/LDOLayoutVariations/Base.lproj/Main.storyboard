@@ -81,18 +81,11 @@
                         <outlet property="templateView" destination="YoY-kB-NBA" id="Tvz-M0-E2L"/>
                     </connections>
                 </customObject>
-                <view contentMode="scaleToFill" id="6s9-Sz-gIn" customClass="LDOLayoutVariationView">
+                <view contentMode="scaleToFill" id="6s9-Sz-gIn" customClass="LDOLVView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3X8-wx-jwJ" customClass="LDOLayoutVariationButton">
-                            <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
-                            <state key="normal" title="Button"/>
-                            <connections>
-                                <outlet property="targetView" destination="yE1-mp-2Kg" id="EyC-ST-9ez"/>
-                            </connections>
-                        </button>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyQ-zS-8QG" customClass="LDOLayoutVariationView">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyQ-zS-8QG" customClass="LDOLVView">
                             <rect key="frame" x="247" y="439" width="120" height="200"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -108,18 +101,20 @@
                     <constraints>
                         <constraint firstAttribute="bottomMargin" secondItem="qyQ-zS-8QG" secondAttribute="bottom" constant="20" id="PwB-eI-29D"/>
                         <constraint firstAttribute="trailingMargin" secondItem="qyQ-zS-8QG" secondAttribute="trailing" id="SZL-R4-6qA"/>
-                        <constraint firstItem="3X8-wx-jwJ" firstAttribute="centerX" secondItem="6s9-Sz-gIn" secondAttribute="centerX" id="oTv-qW-uYJ"/>
-                        <constraint firstItem="3X8-wx-jwJ" firstAttribute="centerY" secondItem="6s9-Sz-gIn" secondAttribute="centerY" id="rtn-Et-sH1"/>
                     </constraints>
                     <connections>
                         <outlet property="targetView" destination="TpU-gO-2f1" id="kBU-1g-Bw0"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" id="YoY-kB-NBA" customClass="LDOLayoutVariationView">
+                <view contentMode="scaleToFill" id="YoY-kB-NBA" customClass="LDOLVView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjg-dL-Fkq" customClass="LDOLayoutVariationView">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUO-Xa-s3V" customClass="LDOLVTopLayoutGuide">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjg-dL-Fkq" customClass="LDOLVView">
                             <rect key="frame" x="247" y="40" width="120" height="200"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -130,11 +125,21 @@
                                 <outlet property="targetView" destination="TZa-s1-dXa" id="4AK-l0-Seb"/>
                             </connections>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IIs-RQ-43B" customClass="LDOLVBottomLayoutGuide">
+                            <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="Fjg-dL-Fkq" firstAttribute="top" secondItem="YoY-kB-NBA" secondAttribute="top" constant="40" id="DY7-1w-GRQ"/>
+                        <constraint firstItem="BUO-Xa-s3V" firstAttribute="top" secondItem="YoY-kB-NBA" secondAttribute="top" id="6vQ-sd-V1c"/>
+                        <constraint firstItem="IIs-RQ-43B" firstAttribute="leading" secondItem="YoY-kB-NBA" secondAttribute="leading" id="CCr-ny-fFC"/>
+                        <constraint firstItem="BUO-Xa-s3V" firstAttribute="leading" secondItem="YoY-kB-NBA" secondAttribute="leading" id="H8Q-07-P8G"/>
+                        <constraint firstAttribute="trailing" secondItem="IIs-RQ-43B" secondAttribute="trailing" id="Jd2-QG-o9N"/>
+                        <constraint firstAttribute="trailing" secondItem="BUO-Xa-s3V" secondAttribute="trailing" id="M8l-yD-ti3"/>
                         <constraint firstAttribute="trailingMargin" secondItem="Fjg-dL-Fkq" secondAttribute="trailing" id="NCf-h0-sEH"/>
+                        <constraint firstAttribute="bottom" secondItem="IIs-RQ-43B" secondAttribute="bottom" id="pPn-6Z-BUj"/>
+                        <constraint firstItem="Fjg-dL-Fkq" firstAttribute="top" secondItem="BUO-Xa-s3V" secondAttribute="bottom" constant="20" id="zGX-fc-Czw"/>
                     </constraints>
                     <connections>
                         <outlet property="targetView" destination="TpU-gO-2f1" id="XQ6-PE-fxp"/>

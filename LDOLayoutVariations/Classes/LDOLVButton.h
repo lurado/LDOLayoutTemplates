@@ -1,5 +1,5 @@
 //
-//  LDOLayoutVariationButton.h
+//  LDOLVButton.h
 //  LDOLayoutVariations
 //
 //  Created by Sebastian Ludwig on 13.03.2017.
@@ -7,9 +7,9 @@
 //
 
 @import UIKit;
-#import "LDOVariationView.h"
+#import "LDOTargetingView.h"
 
-@interface LDOLayoutVariationButton : UIButton <LDOVariationView>
+@interface LDOLVButton : UIButton <LDOTargetingView>
 
 @property (nonatomic, weak) IBOutlet UIButton *targetView;
 

@@ -1,14 +1,14 @@
 //
-//  LDOLayoutVariationButton.m
+//  LDOLVButton.m
 //  LDOLayoutVariations
 //
 //  Created by Sebastian Ludwig on 13.03.2017.
 //
 //
 
-#import "LDOLayoutVariationButton.h"
+#import "LDOLVButton.h"
 
-@implementation LDOLayoutVariationButton
+@implementation LDOLVButton
 
 /*
 // Only override drawRect: if you perform custom drawing.
