@@ -81,12 +81,12 @@
                         <outlet property="templateView" destination="YoY-kB-NBA" id="Tvz-M0-E2L"/>
                     </connections>
                 </customObject>
-                <view contentMode="scaleToFill" id="6s9-Sz-gIn" customClass="LDOLayoutVariationView">
+                <view contentMode="scaleToFill" id="6s9-Sz-gIn" userLabel="First Variation" customClass="LDOLayoutVariationView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3X8-wx-jwJ" customClass="LDOLayoutVariationButton">
-                            <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
+                            <rect key="frame" x="165" y="319" width="46" height="30"/>
                             <state key="normal" title="Button"/>
                             <connections>
                                 <outlet property="targetView" destination="yE1-mp-2Kg" id="EyC-ST-9ez"/>
@@ -94,7 +94,7 @@
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyQ-zS-8QG" customClass="LDOLayoutVariationView">
                             <rect key="frame" x="247" y="439" width="120" height="200"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="200" id="3Lk-R5-LaH"/>
                                 <constraint firstAttribute="width" constant="120" id="gfP-nk-QSX"/>
@@ -115,13 +115,13 @@
                         <outlet property="targetView" destination="TpU-gO-2f1" id="kBU-1g-Bw0"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" id="YoY-kB-NBA" customClass="LDOLayoutVariationView">
+                <view contentMode="scaleToFill" id="YoY-kB-NBA" userLabel="Second Variation" customClass="LDOLayoutVariationView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjg-dL-Fkq" customClass="LDOLayoutVariationView">
                             <rect key="frame" x="247" y="40" width="120" height="200"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="200" id="tNY-uF-xAe"/>
                                 <constraint firstAttribute="width" constant="120" id="uq9-fZ-dsm"/>

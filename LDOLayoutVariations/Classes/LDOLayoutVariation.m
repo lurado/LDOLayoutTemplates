@@ -71,7 +71,7 @@
 
 - (void)collectVariationViewsInto:(NSMutableSet<UIView<LDOVariationView> *> *)set startingWith:(UIView<LDOVariationView> *)view
 {
-    if ([[view class] conformsToProtocol:@protocol(LDOVariationView)]) {
+    if ([[view class] conformsToProtocol:@protocol(LDOVariationView)] && view.targetView) {
         [set addObject:view];
     }
     
@@ -97,7 +97,7 @@
         UIView *targetView = variationView.targetView;
         
 #ifdef DEBUG
-        NSParameterAssert(targetView);
+//        NSParameterAssert(targetView);
         NSAssert(![targetViews containsObject:targetView], @"Target view referenced more than once: %@", targetView);
 #endif
 
@@ -126,7 +126,6 @@
 }
 
 // TODO:
-// - Layout guides
 // - attributes (hidden, alpha, ..)
 
 - (void)apply
