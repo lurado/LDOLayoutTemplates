@@ -97,7 +97,6 @@
         UIView *targetView = variationView.targetView;
         
 #ifdef DEBUG
-//        NSParameterAssert(targetView);
         NSAssert(![targetViews containsObject:targetView], @"Target view referenced more than once: %@", targetView);
 #endif
 
@@ -130,7 +129,7 @@
     NSSet<UIView<LDOVariationView> *> *variationViews = [self collectVariationViews];
     
     [self applyConstraints:variationViews];
-    [self applyStyles:variationViews];
+    [self applyAttributes:variationViews];
 }
 
 - (void)applyConstraints:(NSSet<UIView<LDOVariationView> *> *)variationViews
@@ -162,12 +161,17 @@
     [NSLayoutConstraint activateConstraints:newConstraints];
 }
 
-- (void)applyStyles:(NSSet<UIView<LDOVariationView> *> *)variationViews
+- (void)applyAttributes:(NSSet<UIView<LDOVariationView> *> *)variationViews
 {
     for (UIView<LDOVariationView> *variationView in variationViews) {
+        // common attributes are applied here so the code doesn't need to be repeated in all implementing views
         UIView *target = variationView.targetView;
         
         target.alpha = variationView.alpha;
+        
+        if ([variationView respondsToSelector:@selector(applyAttributes)]) {
+            [variationView applyAttributes];
+        }
     }
 }
 

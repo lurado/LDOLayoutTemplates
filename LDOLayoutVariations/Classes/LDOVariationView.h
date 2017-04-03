@@ -10,4 +10,8 @@
 
 @property (nonatomic, weak) IBOutlet UIView *targetView;
 
+@optional
+
+- (void)applyAttributes;
+
 @end
