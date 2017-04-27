@@ -33,38 +33,38 @@
 
 + (instancetype)layoutVariationForCurrentStateBasedOnVariation:(LDOLayoutVariation *)variation
 {
-    UIView *templateView = [[variation.templateView class] new];
-    templateView.translatesAutoresizingMaskIntoConstraints = NO;
-    templateView.frame = variation.destinationView.frame;
-    templateView.targetView = variation.templateView.targetView;
+    UIView *rootTemplateView = [[variation.templateView class] new];
+    rootTemplateView.translatesAutoresizingMaskIntoConstraints = NO;
+    rootTemplateView.frame = variation.destinationView.frame;
+    rootTemplateView.targetView = variation.templateView.targetView;
     
-    [self copyViewHierarchyFromRootView:variation.templateView toRootView:templateView];
+    [self copyViewHierarchyFromRootView:variation.templateView toRootView:rootTemplateView];
     
     LDOLayoutVariation *currentState = [LDOLayoutVariation new];
-    currentState.templateView = templateView;
+    currentState.templateView = rootTemplateView;
     currentState.destinationView = variation.destinationView;
     
-    NSMapTable<UIView *, UIView *> *currentStateTargetToVariation = [NSMapTable weakToWeakObjectsMapTable];
-    for (UIView *variationView in [currentState collectVariationViews]) {
-        UIView *targetView = variationView.targetView;
+    NSMapTable<UIView *, UIView *> *currentStateTargetToTemplate = [NSMapTable weakToWeakObjectsMapTable];
+    for (UIView *templateView in [currentState collectTemplateViews]) {
+        UIView *targetView = templateView.targetView;
         
         // capture attribute state
-        [self copyVariationAttributesFrom:targetView to:variationView];
+        [self copyVariationAttributesFrom:targetView to:templateView];
         
 #if DEBUG
-        NSAssert([currentStateTargetToVariation objectForKey:targetView] == nil, @"Target view referenced more than once: %@", targetView);
+        NSAssert([currentStateTargetToTemplate objectForKey:targetView] == nil, @"Target view referenced more than once: %@", targetView);
 #endif
-        [currentStateTargetToVariation setObject:variationView forKey:targetView];
+        [currentStateTargetToTemplate setObject:templateView forKey:targetView];
     }
     
-    // add constraints of variation target views to current state variation views with the same target
+    // add constraints of `variation` target views to `currentState` template views with the same target
     // this essentially caputres the current set of constraints
-    NSSet<UIView *> *targetViews = [variation targetViewsFrom:[variation collectVariationViews]];
+    NSSet<UIView *> *targetViews = [variation targetViewsFrom:[variation collectTemplateViews]];
     NSArray<NSLayoutConstraint *> *targetConstraints = [variation relevantConstraintsFor:targetViews];
-    NSMutableArray<NSLayoutConstraint *> *variationConstraints = [NSMutableArray new];
+    NSMutableArray<NSLayoutConstraint *> *currentStateConstraints = [NSMutableArray new];
     for (NSLayoutConstraint *targetConstraint in targetConstraints) {
-        UIView *firstItem = targetConstraint.firstItem ? [currentStateTargetToVariation objectForKey:targetConstraint.firstItem] : nil;
-        UIView *secondItem = targetConstraint.secondItem ? [currentStateTargetToVariation objectForKey:targetConstraint.secondItem] : nil;
+        UIView *firstItem = targetConstraint.firstItem ? [currentStateTargetToTemplate objectForKey:targetConstraint.firstItem] : nil;
+        UIView *secondItem = targetConstraint.secondItem ? [currentStateTargetToTemplate objectForKey:targetConstraint.secondItem] : nil;
         
         NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:firstItem
                                                                       attribute:targetConstraint.firstAttribute
@@ -73,40 +73,40 @@
                                                                       attribute:targetConstraint.secondAttribute
                                                                      multiplier:targetConstraint.multiplier
                                                                        constant:targetConstraint.constant];
-        [variationConstraints addObject:constraint];
+        [currentStateConstraints addObject:constraint];
     }
     
-    [NSLayoutConstraint activateConstraints:variationConstraints];
+    [NSLayoutConstraint activateConstraints:currentStateConstraints];
     
     return currentState;
 }
 
-- (NSSet<UIView *> *)collectVariationViews
+- (NSSet<UIView *> *)collectTemplateViews
 {
-    NSMutableSet<UIView *> *variationViews = [NSMutableSet new];
+    NSMutableSet<UIView *> *templateViews = [NSMutableSet new];
     
-    [self collectVariationViewsInto:variationViews startingWith:self.templateView];
+    [self collectTemplateViewsInto:templateViews startingWith:self.templateView];
     
-    return [variationViews copy];
+    return [templateViews copy];
 }
 
-- (void)collectVariationViewsInto:(NSMutableSet<UIView *> *)set startingWith:(UIView *)variationView
+- (void)collectTemplateViewsInto:(NSMutableSet<UIView *> *)set startingWith:(UIView *)templateView
 {
-    if (variationView.targetView) {
-        [set addObject:variationView];
+    if (templateView.targetView) {
+        [set addObject:templateView];
     }
     
-    for (UIView *subview in variationView.subviews) {
-        [self collectVariationViewsInto:set startingWith:subview];
+    for (UIView *subview in templateView.subviews) {
+        [self collectTemplateViewsInto:set startingWith:subview];
     }
 }
 
-- (NSSet<UIView *> *)targetViewsFrom:(NSSet<UIView *> *)variationViews
+- (NSSet<UIView *> *)targetViewsFrom:(NSSet<UIView *> *)templateViews
 {
     NSMutableSet<UIView *> *targetViews = [NSMutableSet new];
     
-    for (UIView *variationView in variationViews) {
-        UIView *targetView = variationView.targetView;
+    for (UIView *templateView in templateViews) {
+        UIView *targetView = templateView.targetView;
         
 #ifdef DEBUG
         NSAssert(![targetViews containsObject:targetView], @"Target view referenced more than once: %@", targetView);
@@ -138,24 +138,24 @@
 
 - (void)apply
 {
-    NSSet<UIView *> *variationViews = [self collectVariationViews];
+    NSSet<UIView *> *templateViews = [self collectTemplateViews];
     
-    [self applyConstraints:variationViews];
+    [self applyConstraints:templateViews];
     
-    for (UIView *variationView in variationViews) {
-        [self.class copyVariationAttributesFrom:variationView to:variationView.targetView];
+    for (UIView *templateView in templateViews) {
+        [self.class copyVariationAttributesFrom:templateView to:templateView.targetView];
     }
 }
 
-- (void)applyConstraints:(NSSet<UIView *> *)variationViews
+- (void)applyConstraints:(NSSet<UIView *> *)templateViews
 {
-    NSSet<UIView *> *targetViews = [self targetViewsFrom:variationViews];
+    NSSet<UIView *> *targetViews = [self targetViewsFrom:templateViews];
     
     // collect all constraints between target views (to be deactivated)
     NSArray<NSLayoutConstraint *> *currentConstraints = [self relevantConstraintsFor:targetViews];
     
-    // re-create constraints between LDOVariationViews for target views
-    NSArray<NSLayoutConstraint *> *templateConstraints = [self relevantConstraintsFor:variationViews];
+    // re-create constraints between template views for target views
+    NSArray<NSLayoutConstraint *> *templateConstraints = [self relevantConstraintsFor:templateViews];
     
     NSMutableArray<NSLayoutConstraint *> *newConstraints = [NSMutableArray new];
     for (NSLayoutConstraint *templateConstraint in templateConstraints) {
