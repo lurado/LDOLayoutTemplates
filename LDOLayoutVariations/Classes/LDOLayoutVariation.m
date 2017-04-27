@@ -7,28 +7,33 @@
 //
 
 #import "LDOLayoutVariation.h"
-#import "LDOVariationView.h"
+#import "UIView+LDOLayoutVariation.h"
 
 @implementation LDOLayoutVariation
 
-+ (void)copyViewHierarchyFromRootView:(UIView<LDOVariationView> *)sourceRootView toRootView:(UIView<LDOVariationView> *)destinationRootView
++ (void)copyVariationAttributesFrom:(UIView *)source to:(UIView *)destination
 {
-    for (__kindof UIView *sourceSubview in sourceRootView.subviews) {
-        if ([sourceSubview conformsToProtocol:@protocol(LDOVariationView)]) {
-            UIView<LDOVariationView> *copy = [[sourceSubview class] new];
-            
-            copy.targetView = [sourceSubview targetView];
-            
-            [destinationRootView addSubview:copy];
-            
-            [self copyViewHierarchyFromRootView:sourceSubview toRootView:copy];
-        }
+    for (NSString *attribute in [source layoutVariationAttributes]) {
+        [destination setValue:[source valueForKeyPath:attribute] forKeyPath:attribute];
+    }
+}
+
++ (void)copyViewHierarchyFromRootView:(UIView *)sourceRootView toRootView:(UIView *)destinationRootView
+{
+    for (UIView *sourceSubview in sourceRootView.subviews) {
+        UIView *copy = [[sourceSubview class] new];
+        
+        copy.targetView = [sourceSubview targetView];
+        
+        [destinationRootView addSubview:copy];
+        
+        [self copyViewHierarchyFromRootView:sourceSubview toRootView:copy];
     }
 }
 
 + (instancetype)layoutVariationForCurrentStateBasedOnVariation:(LDOLayoutVariation *)variation
 {
-    UIView<LDOVariationView> *templateView = [[variation.templateView class] new];
+    UIView *templateView = [[variation.templateView class] new];
     templateView.translatesAutoresizingMaskIntoConstraints = NO;
     templateView.frame = variation.destinationView.frame;
     templateView.targetView = variation.templateView.targetView;
@@ -39,19 +44,17 @@
     currentState.templateView = templateView;
     currentState.destinationView = variation.destinationView;
     
-    NSMapTable<UIView *, UIView<LDOVariationView> *> *currentStateTargetToVariation = [NSMapTable weakToWeakObjectsMapTable];
-    for (UIView<LDOVariationView> *variationView in [currentState collectVariationViews]) {
-        // capture attribute state
-        variationView.alpha = variationView.targetView.alpha;
-        if ([variationView respondsToSelector:@selector(captureCurrentAttributes)]) {
-            [variationView captureCurrentAttributes];
-        }
+    NSMapTable<UIView *, UIView *> *currentStateTargetToVariation = [NSMapTable weakToWeakObjectsMapTable];
+    for (UIView *variationView in [currentState collectVariationViews]) {
+        UIView *targetView = variationView.targetView;
         
-        UIView *target = variationView.targetView;
+        // capture attribute state
+        [self copyVariationAttributesFrom:targetView to:variationView];
+        
 #if DEBUG
-        NSAssert([currentStateTargetToVariation objectForKey:target] == nil, @"Target view referenced more than once: %@", target);
+        NSAssert([currentStateTargetToVariation objectForKey:targetView] == nil, @"Target view referenced more than once: %@", targetView);
 #endif
-        [currentStateTargetToVariation setObject:variationView forKey:target];
+        [currentStateTargetToVariation setObject:variationView forKey:targetView];
     }
     
     // add constraints of variation target views to current state variation views with the same target
@@ -78,34 +81,31 @@
     return currentState;
 }
 
-- (NSSet<UIView<LDOVariationView> *> *)collectVariationViews
+- (NSSet<UIView *> *)collectVariationViews
 {
-    NSMutableSet<UIView<LDOVariationView> *> *variationViews = [NSMutableSet new];
+    NSMutableSet<UIView *> *variationViews = [NSMutableSet new];
     
     [self collectVariationViewsInto:variationViews startingWith:self.templateView];
     
     return [variationViews copy];
 }
 
-- (void)collectVariationViewsInto:(NSMutableSet<UIView<LDOVariationView> *> *)set startingWith:(UIView *)view
+- (void)collectVariationViewsInto:(NSMutableSet<UIView *> *)set startingWith:(UIView *)variationView
 {
-    if ([[view class] conformsToProtocol:@protocol(LDOVariationView)]) {
-        UIView<LDOVariationView> *variationView = (UIView<LDOVariationView> *)view;
-        if (variationView.targetView) {
-            [set addObject:variationView];
-        }
+    if (variationView.targetView) {
+        [set addObject:variationView];
     }
     
-    for (UIView *subview in view.subviews) {
+    for (UIView *subview in variationView.subviews) {
         [self collectVariationViewsInto:set startingWith:subview];
     }
 }
 
-- (NSSet<UIView *> *)targetViewsFrom:(NSSet<UIView<LDOVariationView> *> *)variationViews
+- (NSSet<UIView *> *)targetViewsFrom:(NSSet<UIView *> *)variationViews
 {
     NSMutableSet<UIView *> *targetViews = [NSMutableSet new];
     
-    for (UIView<LDOVariationView> *variationView in variationViews) {
+    for (UIView *variationView in variationViews) {
         UIView *targetView = variationView.targetView;
         
 #ifdef DEBUG
@@ -138,13 +138,16 @@
 
 - (void)apply
 {
-    NSSet<UIView<LDOVariationView> *> *variationViews = [self collectVariationViews];
+    NSSet<UIView *> *variationViews = [self collectVariationViews];
     
     [self applyConstraints:variationViews];
-    [self applyAttributes:variationViews];
+    
+    for (UIView *variationView in variationViews) {
+        [self.class copyVariationAttributesFrom:variationView to:variationView.targetView];
+    }
 }
 
-- (void)applyConstraints:(NSSet<UIView<LDOVariationView> *> *)variationViews
+- (void)applyConstraints:(NSSet<UIView *> *)variationViews
 {
     NSSet<UIView *> *targetViews = [self targetViewsFrom:variationViews];
     
@@ -171,20 +174,6 @@
     
     [NSLayoutConstraint deactivateConstraints:currentConstraints];
     [NSLayoutConstraint activateConstraints:newConstraints];
-}
-
-- (void)applyAttributes:(NSSet<UIView<LDOVariationView> *> *)variationViews
-{
-    for (UIView<LDOVariationView> *variationView in variationViews) {
-        // common attributes are applied here so the code doesn't need to be repeated in all implementing views
-        UIView *target = variationView.targetView;
-        
-        target.alpha = variationView.alpha;
-        
-        if ([variationView respondsToSelector:@selector(applyAttributes)]) {
-            [variationView applyAttributes];
-        }
-    }
 }
 
 @end

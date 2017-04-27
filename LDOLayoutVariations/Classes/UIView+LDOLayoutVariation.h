@@ -1,16 +1,17 @@
 //
-//  LDOLayoutVariationView.h
+//  UIView+LDOLayoutVariation.h
 //  LDOLayoutVariations
 //
-//  Created by Sebastian Ludwig on 13.03.2017.
+//  Created by Sebastian Ludwig on 27.04.2017.
 //  Copyright (c) 2017 Julian Raschke und Sebastian Ludwig GbR. All rights reserved.
 //
 
 @import UIKit;
-#import "LDOVariationView.h"
 
-@interface LDOLayoutVariationView : UIView <LDOVariationView>
+@interface UIView (LDOLayoutVariation)
 
 @property (nonatomic, weak) IBOutlet UIView *targetView;
+
+- (NSArray<NSString *> *)layoutVariationAttributes;
 
 @end

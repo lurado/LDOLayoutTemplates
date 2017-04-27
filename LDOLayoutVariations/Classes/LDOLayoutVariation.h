@@ -7,12 +7,11 @@
 //
 
 @import Foundation;
-#import "LDOVariationView.h"
 
 @interface LDOLayoutVariation : NSObject
 
 @property (nonatomic, weak) IBOutlet UIView *destinationView;
-@property (nonatomic) IBOutlet UIView<LDOVariationView> *templateView;
+@property (nonatomic) IBOutlet UIView *templateView;
 
 // the resulting variation only restores the state of views that are also part of the given variation
 + (instancetype)layoutVariationForCurrentStateBasedOnVariation:(LDOLayoutVariation *)variation;
