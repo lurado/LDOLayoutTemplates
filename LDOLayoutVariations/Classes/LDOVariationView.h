@@ -13,5 +13,6 @@
 @optional
 
 - (void)applyAttributes;
+- (void)captureCurrentAttributes;
 
 @end
