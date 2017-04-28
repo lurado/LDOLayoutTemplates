@@ -1,20 +1,20 @@
 //
-//  LDOLayoutVariation.m
-//  LDOLayoutVariations
+//  LDOLayoutTemplate.m
+//  LDOLayoutTemplates
 //
 //  Created by Sebastian Ludwig on 13.03.2017.
 //  Copyright (c) 2017 Julian Raschke und Sebastian Ludwig GbR. All rights reserved.
 //
 
-#import "LDOLayoutVariation.h"
-#import "UIView+LDOLayoutVariation.h"
+#import "LDOLayoutTemplate.h"
+#import "UIView+LDOLayoutTemplate.h"
 
-@implementation LDOLayoutVariation
+@implementation LDOLayoutTemplate
 
 + (void)copyVariationAttributesFrom:(UIView *)source to:(UIView *)destination
 {
-    for (NSString *attribute in [source layoutVariationAttributes]) {
-        [destination setValue:[source valueForKeyPath:attribute] forKeyPath:attribute];
+    for (NSString *keyPath in [source transferableTemplateAttributeKeyPaths]) {
+        [destination setValue:[source valueForKeyPath:keyPath] forKeyPath:keyPath];
     }
 }
 
@@ -31,18 +31,18 @@
     }
 }
 
-+ (instancetype)layoutVariationForCurrentStateBasedOnVariation:(LDOLayoutVariation *)variation
++ (instancetype)layoutTemplateForCurrentStateBasedOnTemplate:(LDOLayoutTemplate *)layoutTemplate
 {
-    UIView *rootTemplateView = [[variation.templateView class] new];
+    UIView *rootTemplateView = [[layoutTemplate.templateView class] new];
     rootTemplateView.translatesAutoresizingMaskIntoConstraints = NO;
-    rootTemplateView.frame = variation.destinationView.frame;
-    rootTemplateView.targetView = variation.templateView.targetView;
+    rootTemplateView.frame = layoutTemplate.destinationView.frame;
+    rootTemplateView.targetView = layoutTemplate.templateView.targetView;
     
-    [self copyViewHierarchyFromRootView:variation.templateView toRootView:rootTemplateView];
+    [self copyViewHierarchyFromRootView:layoutTemplate.templateView toRootView:rootTemplateView];
     
-    LDOLayoutVariation *currentState = [LDOLayoutVariation new];
+    LDOLayoutTemplate *currentState = [LDOLayoutTemplate new];
     currentState.templateView = rootTemplateView;
-    currentState.destinationView = variation.destinationView;
+    currentState.destinationView = layoutTemplate.destinationView;
     
     NSMapTable<UIView *, UIView *> *currentStateTargetToTemplate = [NSMapTable weakToWeakObjectsMapTable];
     for (UIView *templateView in [currentState collectTemplateViews]) {
@@ -57,10 +57,10 @@
         [currentStateTargetToTemplate setObject:templateView forKey:targetView];
     }
     
-    // add constraints of `variation` target views to `currentState` template views with the same target
+    // add constraints of `layoutTemplate` target views to `currentState` template views with the same target
     // this essentially caputres the current set of constraints
-    NSSet<UIView *> *targetViews = [variation targetViewsFrom:[variation collectTemplateViews]];
-    NSArray<NSLayoutConstraint *> *targetConstraints = [variation relevantConstraintsFor:targetViews];
+    NSSet<UIView *> *targetViews = [layoutTemplate targetViewsFrom:[layoutTemplate collectTemplateViews]];
+    NSArray<NSLayoutConstraint *> *targetConstraints = [layoutTemplate relevantConstraintsFor:targetViews];
     NSMutableArray<NSLayoutConstraint *> *currentStateConstraints = [NSMutableArray new];
     for (NSLayoutConstraint *targetConstraint in targetConstraints) {
         UIView *firstItem = targetConstraint.firstItem ? [currentStateTargetToTemplate objectForKey:targetConstraint.firstItem] : nil;

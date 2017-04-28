@@ -1,19 +1,19 @@
 //
 //  LDOViewController.m
-//  LDOLayoutVariations
+//  LDOLayoutTemplates
 //
 //  Created by Sebastian Ludwig on 13.03.2017.
 //  Copyright (c) 2017 Julian Raschke und Sebastian Ludwig GbR. All rights reserved.
 //
 
 #import "LDOViewController.h"
-@import LDOLayoutVariations;
+@import LDOLayoutTemplates;
 
 @interface LDOViewController ()
 
-@property (nonatomic) LDOLayoutVariation *initialState;
-@property (nonatomic, weak) IBOutlet LDOLayoutVariation *firstLayoutVariation;
-@property (nonatomic, weak) IBOutlet LDOLayoutVariation *secondLayoutVariation;
+@property (nonatomic) LDOLayoutTemplate *initialState;
+@property (nonatomic, weak) IBOutlet LDOLayoutTemplate *firstLayout;
+@property (nonatomic, weak) IBOutlet LDOLayoutTemplate *secondLayout;
 
 @end
 
@@ -23,16 +23,16 @@
 {
     [super viewDidLoad];
     
-    self.initialState = [LDOLayoutVariation layoutVariationForCurrentStateBasedOnVariation:self.firstLayoutVariation];
+    self.initialState = [LDOLayoutTemplate layoutTemplateForCurrentStateBasedOnTemplate:self.firstLayout];
 }
 
-- (void)applyLayoutVariation:(LDOLayoutVariation *)variation
+- (void)applyLayoutTemplate:(LDOLayoutTemplate *)template
 {
     [self.view layoutIfNeeded];
     
     [UIView animateWithDuration:0.3
                      animations:^{
-                         [variation apply];
+                         [template apply];
                          
                          [self.view layoutIfNeeded];
                      }];
@@ -47,17 +47,17 @@
 
 - (IBAction)reset
 {
-    [self applyLayoutVariation:self.initialState];
+    [self applyLayoutTemplate:self.initialState];
 }
 
 - (IBAction)applyFirst
 {
-    [self applyLayoutVariation:self.firstLayoutVariation];
+    [self applyLayoutTemplate:self.firstLayout];
 }
 
 - (IBAction)applySecond
 {
-    [self applyLayoutVariation:self.secondLayoutVariation];
+    [self applyLayoutTemplate:self.secondLayout];
 }
 
 @end

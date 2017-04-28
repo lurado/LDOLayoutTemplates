@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6003F589195388D20070C39A"
-               BuildableName = "LDOLayoutVariations_Example.app"
-               BlueprintName = "LDOLayoutVariations_Example"
-               ReferencedContainer = "container:LDOLayoutVariations.xcodeproj">
+               BuildableName = "LDOLayoutTemplates_Example.app"
+               BlueprintName = "LDOLayoutTemplates_Example"
+               ReferencedContainer = "container:LDOLayoutTemplates.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6003F5AD195388D20070C39A"
-               BuildableName = "LDOLayoutVariations_Tests.xctest"
-               BlueprintName = "LDOLayoutVariations_Tests"
-               ReferencedContainer = "container:LDOLayoutVariations.xcodeproj">
+               BuildableName = "LDOLayoutTemplates_Tests.xctest"
+               BlueprintName = "LDOLayoutTemplates_Tests"
+               ReferencedContainer = "container:LDOLayoutTemplates.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "LDOLayoutVariations_Example.app"
-            BlueprintName = "LDOLayoutVariations_Example"
-            ReferencedContainer = "container:LDOLayoutVariations.xcodeproj">
+            BuildableName = "LDOLayoutTemplates_Example.app"
+            BlueprintName = "LDOLayoutTemplates_Example"
+            ReferencedContainer = "container:LDOLayoutTemplates.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "LDOLayoutVariations_Example.app"
-            BlueprintName = "LDOLayoutVariations_Example"
-            ReferencedContainer = "container:LDOLayoutVariations.xcodeproj">
+            BuildableName = "LDOLayoutTemplates_Example.app"
+            BlueprintName = "LDOLayoutTemplates_Example"
+            ReferencedContainer = "container:LDOLayoutTemplates.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "LDOLayoutVariations_Example.app"
-            BlueprintName = "LDOLayoutVariations_Example"
-            ReferencedContainer = "container:LDOLayoutVariations.xcodeproj">
+            BuildableName = "LDOLayoutTemplates_Example.app"
+            BlueprintName = "LDOLayoutTemplates_Example"
+            ReferencedContainer = "container:LDOLayoutTemplates.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

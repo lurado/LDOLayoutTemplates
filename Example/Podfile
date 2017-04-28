@@ -1,11 +1,9 @@
 use_frameworks!
 
-target 'LDOLayoutVariations_Example' do
-  pod 'LDOLayoutVariations', :path => '../'
+target 'LDOLayoutTemplates_Example' do
+  pod 'LDOLayoutTemplates', :path => '../'
 
-  target 'LDOLayoutVariations_Tests' do
+  target 'LDOLayoutTemplates_Tests' do
     inherit! :search_paths
-
-    
   end
 end

@@ -1,16 +1,16 @@
 PODS:
-  - LDOLayoutVariations (0.1.0)
+  - LDOLayoutTemplates (0.1.0)
 
 DEPENDENCIES:
-  - LDOLayoutVariations (from `../`)
+  - LDOLayoutTemplates (from `../`)
 
 EXTERNAL SOURCES:
-  LDOLayoutVariations:
+  LDOLayoutTemplates:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LDOLayoutVariations: 1060f18b89c68d7f0f519ac13913989fd59f9a27
+  LDOLayoutTemplates: 3cc31e194b7ef2f2c506c0650e9816b82daebd86
 
-PODFILE CHECKSUM: 0b5f500ff1c3fa7f64ba76e8d982cbc03fba168e
+PODFILE CHECKSUM: 0cbed56c23fd478e467be2a9cf37ec78dd4dcd0f
 
 COCOAPODS: 1.2.1

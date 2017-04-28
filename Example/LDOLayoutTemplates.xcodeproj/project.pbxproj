@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3EF805CECB9F31F3EE270FC5 /* Pods_LDOLayoutVariations_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE7D746DCD2B89B508B52C4 /* Pods_LDOLayoutVariations_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -22,8 +21,9 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
-		803D297970EB0189FD36CF44 /* Pods_LDOLayoutVariations_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371C4B5DE2531500437FB1C9 /* Pods_LDOLayoutVariations_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		B500B7B9EBBD1ECE26E90521 /* Pods_LDOLayoutTemplates_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D20C8FF732EAE2D45E8F26D4 /* Pods_LDOLayoutTemplates_Tests.framework */; };
+		C14F670819704BE9427800A1 /* Pods_LDOLayoutTemplates_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5F63140F4E3EC03BE2FCAC /* Pods_LDOLayoutTemplates_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,36 +37,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		267843B313020FBF0CE62F16 /* Pods-LDOLayoutTemplates_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOLayoutTemplates_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LDOLayoutTemplates_Tests/Pods-LDOLayoutTemplates_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		272A4100408BB91CCC70AA9F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		371C4B5DE2531500437FB1C9 /* Pods_LDOLayoutVariations_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LDOLayoutVariations_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF5C59886598E2F3D18BC53 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		4FC91FD2D8D654D0C9BF7DD4 /* LDOLayoutVariations.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LDOLayoutVariations.podspec; path = ../LDOLayoutVariations.podspec; sourceTree = "<group>"; };
 		569E8C2CEB06A8CB428688F7 /* Pods-LDOLayoutVariations_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOLayoutVariations_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LDOLayoutVariations_Example/Pods-LDOLayoutVariations_Example.release.xcconfig"; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* LDOLayoutVariations_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LDOLayoutVariations_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D5C062A0B0844E8461B962B /* Pods-LDOLayoutTemplates_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOLayoutTemplates_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LDOLayoutTemplates_Example/Pods-LDOLayoutTemplates_Example.release.xcconfig"; sourceTree = "<group>"; };
+		6003F58A195388D20070C39A /* LDOLayoutTemplates_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LDOLayoutTemplates_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6003F595195388D20070C39A /* LDOLayoutVariations-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LDOLayoutVariations-Info.plist"; sourceTree = "<group>"; };
+		6003F595195388D20070C39A /* LDOLayoutTemplates-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LDOLayoutTemplates-Info.plist"; sourceTree = "<group>"; };
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6003F59B195388D20070C39A /* LDOLayoutVariations-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LDOLayoutVariations-Prefix.pch"; sourceTree = "<group>"; };
+		6003F59B195388D20070C39A /* LDOLayoutTemplates-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LDOLayoutTemplates-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* LDOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDOAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* LDOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDOAppDelegate.m; sourceTree = "<group>"; };
 		6003F5A5195388D20070C39A /* LDOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDOViewController.h; sourceTree = "<group>"; };
 		6003F5A6195388D20070C39A /* LDOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDOViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6003F5AE195388D20070C39A /* LDOLayoutVariations_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LDOLayoutVariations_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F5AE195388D20070C39A /* LDOLayoutTemplates_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LDOLayoutTemplates_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		61B9669C366D83089E7BE20A /* Pods-LDOLayoutTemplates_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOLayoutTemplates_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LDOLayoutTemplates_Example/Pods-LDOLayoutTemplates_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		829754712A2BD07C20A75D32 /* Pods-LDOLayoutVariations_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOLayoutVariations_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LDOLayoutVariations_Example/Pods-LDOLayoutVariations_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9E8FFD941EB3924700669FE0 /* LDOLayoutTemplates.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = LDOLayoutTemplates.podspec; path = ../LDOLayoutTemplates.podspec; sourceTree = "<group>"; };
 		AA9B0AF5F6B941C0324F8267 /* Pods-LDOLayoutVariations_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOLayoutVariations_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LDOLayoutVariations_Tests/Pods-LDOLayoutVariations_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		BFE7D746DCD2B89B508B52C4 /* Pods_LDOLayoutVariations_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LDOLayoutVariations_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5F63140F4E3EC03BE2FCAC /* Pods_LDOLayoutTemplates_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LDOLayoutTemplates_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D20C8FF732EAE2D45E8F26D4 /* Pods_LDOLayoutTemplates_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LDOLayoutTemplates_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E8A503E96B8660C8911DB3 /* Pods-LDOLayoutVariations_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOLayoutVariations_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LDOLayoutVariations_Tests/Pods-LDOLayoutVariations_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		FDCC070CDEE7FD2D92B5F1A3 /* Pods-LDOLayoutTemplates_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOLayoutTemplates_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LDOLayoutTemplates_Tests/Pods-LDOLayoutTemplates_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +81,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				803D297970EB0189FD36CF44 /* Pods_LDOLayoutVariations_Example.framework in Frameworks */,
+				C14F670819704BE9427800A1 /* Pods_LDOLayoutTemplates_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +92,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				3EF805CECB9F31F3EE270FC5 /* Pods_LDOLayoutVariations_Tests.framework in Frameworks */,
+				B500B7B9EBBD1ECE26E90521 /* Pods_LDOLayoutTemplates_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +106,10 @@
 				569E8C2CEB06A8CB428688F7 /* Pods-LDOLayoutVariations_Example.release.xcconfig */,
 				AA9B0AF5F6B941C0324F8267 /* Pods-LDOLayoutVariations_Tests.debug.xcconfig */,
 				E1E8A503E96B8660C8911DB3 /* Pods-LDOLayoutVariations_Tests.release.xcconfig */,
+				61B9669C366D83089E7BE20A /* Pods-LDOLayoutTemplates_Example.debug.xcconfig */,
+				5D5C062A0B0844E8461B962B /* Pods-LDOLayoutTemplates_Example.release.xcconfig */,
+				267843B313020FBF0CE62F16 /* Pods-LDOLayoutTemplates_Tests.debug.xcconfig */,
+				FDCC070CDEE7FD2D92B5F1A3 /* Pods-LDOLayoutTemplates_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -110,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
-				6003F593195388D20070C39A /* Example for LDOLayoutVariations */,
+				6003F593195388D20070C39A /* Example */,
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
@@ -121,8 +129,8 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* LDOLayoutVariations_Example.app */,
-				6003F5AE195388D20070C39A /* LDOLayoutVariations_Tests.xctest */,
+				6003F58A195388D20070C39A /* LDOLayoutTemplates_Example.app */,
+				6003F5AE195388D20070C39A /* LDOLayoutTemplates_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,13 +142,13 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				371C4B5DE2531500437FB1C9 /* Pods_LDOLayoutVariations_Example.framework */,
-				BFE7D746DCD2B89B508B52C4 /* Pods_LDOLayoutVariations_Tests.framework */,
+				BF5F63140F4E3EC03BE2FCAC /* Pods_LDOLayoutTemplates_Example.framework */,
+				D20C8FF732EAE2D45E8F26D4 /* Pods_LDOLayoutTemplates_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6003F593195388D20070C39A /* Example for LDOLayoutVariations */ = {
+		6003F593195388D20070C39A /* Example */ = {
 			isa = PBXGroup;
 			children = (
 				6003F59C195388D20070C39A /* LDOAppDelegate.h */,
@@ -152,17 +160,17 @@
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
-			name = "Example for LDOLayoutVariations";
-			path = LDOLayoutVariations;
+			name = Example;
+			path = LDOLayoutTemplates;
 			sourceTree = "<group>";
 		};
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6003F595195388D20070C39A /* LDOLayoutVariations-Info.plist */,
+				6003F595195388D20070C39A /* LDOLayoutTemplates-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
-				6003F59B195388D20070C39A /* LDOLayoutVariations-Prefix.pch */,
+				6003F59B195388D20070C39A /* LDOLayoutTemplates-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -189,7 +197,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				4FC91FD2D8D654D0C9BF7DD4 /* LDOLayoutVariations.podspec */,
+				9E8FFD941EB3924700669FE0 /* LDOLayoutTemplates.podspec */,
 				272A4100408BB91CCC70AA9F /* README.md */,
 				3EF5C59886598E2F3D18BC53 /* LICENSE */,
 			);
@@ -199,9 +207,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6003F589195388D20070C39A /* LDOLayoutVariations_Example */ = {
+		6003F589195388D20070C39A /* LDOLayoutTemplates_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "LDOLayoutVariations_Example" */;
+			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "LDOLayoutTemplates_Example" */;
 			buildPhases = (
 				9CF0D9BB496A5E109448D0E1 /* [CP] Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
@@ -214,14 +222,14 @@
 			);
 			dependencies = (
 			);
-			name = LDOLayoutVariations_Example;
+			name = LDOLayoutTemplates_Example;
 			productName = LDOLayoutVariations;
-			productReference = 6003F58A195388D20070C39A /* LDOLayoutVariations_Example.app */;
+			productReference = 6003F58A195388D20070C39A /* LDOLayoutTemplates_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6003F5AD195388D20070C39A /* LDOLayoutVariations_Tests */ = {
+		6003F5AD195388D20070C39A /* LDOLayoutTemplates_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "LDOLayoutVariations_Tests" */;
+			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "LDOLayoutTemplates_Tests" */;
 			buildPhases = (
 				4B4F27A5AFB01A85D87D9C8A /* [CP] Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
@@ -235,9 +243,9 @@
 			dependencies = (
 				6003F5B4195388D20070C39A /* PBXTargetDependency */,
 			);
-			name = LDOLayoutVariations_Tests;
+			name = LDOLayoutTemplates_Tests;
 			productName = LDOLayoutVariationsTests;
-			productReference = 6003F5AE195388D20070C39A /* LDOLayoutVariations_Tests.xctest */;
+			productReference = 6003F5AE195388D20070C39A /* LDOLayoutTemplates_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -255,7 +263,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "LDOLayoutVariations" */;
+			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "LDOLayoutTemplates" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -268,8 +276,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6003F589195388D20070C39A /* LDOLayoutVariations_Example */,
-				6003F5AD195388D20070C39A /* LDOLayoutVariations_Tests */,
+				6003F589195388D20070C39A /* LDOLayoutTemplates_Example */,
+				6003F5AD195388D20070C39A /* LDOLayoutTemplates_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -324,7 +332,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LDOLayoutVariations_Tests/Pods-LDOLayoutVariations_Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LDOLayoutTemplates_Tests/Pods-LDOLayoutTemplates_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9CF0D9BB496A5E109448D0E1 /* [CP] Check Pods Manifest.lock */ = {
@@ -354,7 +362,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LDOLayoutVariations_Example/Pods-LDOLayoutVariations_Example-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LDOLayoutTemplates_Example/Pods-LDOLayoutTemplates_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C0048F7EEA192C321E7CCF04 /* [CP] Copy Pods Resources */ = {
@@ -369,7 +377,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LDOLayoutVariations_Example/Pods-LDOLayoutVariations_Example-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LDOLayoutTemplates_Example/Pods-LDOLayoutTemplates_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DF67EC3757606A40044A5944 /* [CP] Embed Pods Frameworks */ = {
@@ -384,7 +392,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LDOLayoutVariations_Tests/Pods-LDOLayoutVariations_Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LDOLayoutTemplates_Tests/Pods-LDOLayoutTemplates_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -413,7 +421,7 @@
 /* Begin PBXTargetDependency section */
 		6003F5B4195388D20070C39A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6003F589195388D20070C39A /* LDOLayoutVariations_Example */;
+			target = 6003F589195388D20070C39A /* LDOLayoutTemplates_Example */;
 			targetProxy = 6003F5B3195388D20070C39A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -531,12 +539,12 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 829754712A2BD07C20A75D32 /* Pods-LDOLayoutVariations_Example.debug.xcconfig */;
+			baseConfigurationReference = 61B9669C366D83089E7BE20A /* Pods-LDOLayoutTemplates_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LDOLayoutVariations/LDOLayoutVariations-Prefix.pch";
-				INFOPLIST_FILE = "LDOLayoutVariations/LDOLayoutVariations-Info.plist";
+				GCC_PREFIX_HEADER = "LDOLayoutTemplates/LDOLayoutTemplates-Prefix.pch";
+				INFOPLIST_FILE = "LDOLayoutTemplates/LDOLayoutTemplates-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -546,12 +554,12 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 569E8C2CEB06A8CB428688F7 /* Pods-LDOLayoutVariations_Example.release.xcconfig */;
+			baseConfigurationReference = 5D5C062A0B0844E8461B962B /* Pods-LDOLayoutTemplates_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LDOLayoutVariations/LDOLayoutVariations-Prefix.pch";
-				INFOPLIST_FILE = "LDOLayoutVariations/LDOLayoutVariations-Info.plist";
+				GCC_PREFIX_HEADER = "LDOLayoutTemplates/LDOLayoutTemplates-Prefix.pch";
+				INFOPLIST_FILE = "LDOLayoutTemplates/LDOLayoutTemplates-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -561,14 +569,9 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA9B0AF5F6B941C0324F8267 /* Pods-LDOLayoutVariations_Tests.debug.xcconfig */;
+			baseConfigurationReference = 267843B313020FBF0CE62F16 /* Pods-LDOLayoutTemplates_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -578,27 +581,22 @@
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LDOLayoutVariations_Example.app/LDOLayoutVariations_Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LDOLayoutTemplates_Example.app/LDOLayoutTemplates_Example";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1E8A503E96B8660C8911DB3 /* Pods-LDOLayoutVariations_Tests.release.xcconfig */;
+			baseConfigurationReference = FDCC070CDEE7FD2D92B5F1A3 /* Pods-LDOLayoutTemplates_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LDOLayoutVariations_Example.app/LDOLayoutVariations_Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LDOLayoutTemplates_Example.app/LDOLayoutTemplates_Example";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -606,7 +604,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6003F585195388D10070C39A /* Build configuration list for PBXProject "LDOLayoutVariations" */ = {
+		6003F585195388D10070C39A /* Build configuration list for PBXProject "LDOLayoutTemplates" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6003F5BD195388D20070C39A /* Debug */,
@@ -615,7 +613,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "LDOLayoutVariations_Example" */ = {
+		6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "LDOLayoutTemplates_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6003F5C0195388D20070C39A /* Debug */,
@@ -624,7 +622,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "LDOLayoutVariations_Tests" */ = {
+		6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "LDOLayoutTemplates_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6003F5C3195388D20070C39A /* Debug */,

@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint LDOLayoutVariations.podspec' to ensure this is a
+# Be sure to run `pod lib lint LDOLayoutTemplates.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -7,9 +7,9 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'LDOLayoutVariations'
+  s.name             = 'LDOLayoutTemplates'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of LDOLayoutVariations.'
+  s.summary          = 'A short description of LDOLayoutTemplates.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,19 +21,19 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/sebastian@lurado.de/LDOLayoutVariations'
+  s.homepage         = 'https://github.com/lurado/LDOLayoutTemplates'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'sebastian@lurado.de' => 'sebastian@lurado.de' }
-  s.source           = { :git => 'https://github.com/sebastian@lurado.de/LDOLayoutVariations.git', :tag => s.version.to_s }
+  s.author           = { "Julian Raschke und Sebastian Ludwig GbR" => "info@lurado.com" }
+  s.source           = { :git => 'https://github.com/lurado/LDOLayoutTemplates.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'LDOLayoutVariations/Classes/**/*'
+  s.source_files = 'LDOLayoutTemplates/Classes/**/*'
   
   # s.resource_bundles = {
-  #   'LDOLayoutVariations' => ['LDOLayoutVariations/Assets/*.png']
+  #   'LDOLayoutTemplates' => ['LDOLayoutTemplates/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

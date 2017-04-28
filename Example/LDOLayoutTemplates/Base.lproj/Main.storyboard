@@ -64,24 +64,24 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="firstLayoutVariation" destination="9xG-sC-QFc" id="b9B-pf-W61"/>
-                        <outlet property="secondLayoutVariation" destination="rem-WP-CuH" id="fem-FA-AV0"/>
+                        <outlet property="firstLayout" destination="9xG-sC-QFc" id="EjZ-73-UF9"/>
+                        <outlet property="secondLayout" destination="rem-WP-CuH" id="BF5-00-mUD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="9xG-sC-QFc" customClass="LDOLayoutVariation">
+                <customObject id="9xG-sC-QFc" userLabel="First Layout" customClass="LDOLayoutTemplate">
                     <connections>
                         <outlet property="destinationView" destination="TpU-gO-2f1" id="cDo-Mu-uAx"/>
                         <outlet property="templateView" destination="6s9-Sz-gIn" id="EqP-8j-ngI"/>
                     </connections>
                 </customObject>
-                <customObject id="rem-WP-CuH" customClass="LDOLayoutVariation">
+                <customObject id="rem-WP-CuH" customClass="LDOLayoutTemplate">
                     <connections>
                         <outlet property="destinationView" destination="TpU-gO-2f1" id="zdI-n8-0qc"/>
                         <outlet property="templateView" destination="YoY-kB-NBA" id="Tvz-M0-E2L"/>
                     </connections>
                 </customObject>
-                <view contentMode="scaleToFill" id="6s9-Sz-gIn" userLabel="First Variation">
+                <view contentMode="scaleToFill" id="6s9-Sz-gIn" userLabel="First Template">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -115,7 +115,7 @@
                         <outlet property="targetView" destination="TpU-gO-2f1" id="kBU-1g-Bw0"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" id="YoY-kB-NBA" userLabel="Second Variation">
+                <view contentMode="scaleToFill" id="YoY-kB-NBA" userLabel="Second Template">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>

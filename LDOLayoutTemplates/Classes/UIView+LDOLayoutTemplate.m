@@ -1,15 +1,15 @@
 //
-//  UIView+LDOLayoutVariation.m
+//  UIView+LDOLayoutTemplate.m
 //  Pods
 //
 //  Created by Sebastian Ludwig on 27.04.2017.
 //
 //
 
-#import "UIView+LDOLayoutVariation.h"
+#import "UIView+LDOLayoutTemplate.h"
 #import <objc/runtime.h>
 
-@implementation UIView (LDOLayoutVariation)
+@implementation UIView (LDOLayoutTemplate)
 
 - (UIView *)targetView
 {
@@ -21,7 +21,7 @@
     objc_setAssociatedObject(self, @selector(targetView), targetView, OBJC_ASSOCIATION_ASSIGN);
 }
 
-- (NSArray<NSString *> *)layoutVariationAttributes
+- (NSArray<NSString *> *)transferableTemplateAttributeKeyPaths
 {
     return @[
              @"alpha",
