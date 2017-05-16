@@ -1,5 +1,5 @@
 //
-//  UIView+LDOLayoutTemplate.h
+//  UIView+LDOLayoutTemplates.h
 //  LDOLayoutTemplates
 //
 //  Created by Sebastian Ludwig on 27.04.2017.
@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-@interface UIView (LDOLayoutTemplate)
+@interface UIView (LDOLayoutTemplates)
 
 @property (nonatomic, weak) IBOutlet UIView *targetView;
 

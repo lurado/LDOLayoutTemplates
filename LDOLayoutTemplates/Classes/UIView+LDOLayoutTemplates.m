@@ -1,15 +1,15 @@
 //
-//  UIView+LDOLayoutTemplate.m
-//  Pods
+//  UIView+LDOLayoutTemplates.m
+//  LDOLayoutTemplates
 //
 //  Created by Sebastian Ludwig on 27.04.2017.
-//
+//  Copyright (c) 2017 Julian Raschke und Sebastian Ludwig GbR. All rights reserved.
 //
 
-#import "UIView+LDOLayoutTemplate.h"
+#import "UIView+LDOLayoutTemplates.h"
 #import <objc/runtime.h>
 
-@implementation UIView (LDOLayoutTemplate)
+@implementation UIView (LDOLayoutTemplates)
 
 - (UIView *)targetView
 {

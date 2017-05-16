@@ -7,7 +7,7 @@
 //
 
 #import "LDOLayoutTemplate.h"
-#import "UIView+LDOLayoutTemplate.h"
+#import "UIView+LDOLayoutTemplates.h"
 
 @implementation LDOLayoutTemplate
 
@@ -20,8 +20,14 @@
 
 + (void)copyViewHierarchyFromRootView:(UIView *)sourceRootView toRootView:(UIView *)destinationRootView
 {
-    for (UIView *sourceSubview in sourceRootView.subviews) {
-        UIView *copy = [[sourceSubview class] new];
+    for (__kindof UIView *sourceSubview in sourceRootView.subviews) {
+        UIView *copy;
+        if ([sourceSubview isKindOfClass:[UICollectionView class]]) {
+            copy = [[UICollectionView alloc] initWithFrame:CGRectZero
+                                      collectionViewLayout:[sourceSubview collectionViewLayout]];
+        } else {
+            copy = [[sourceSubview class] new];
+        }
         
         copy.targetView = [sourceSubview targetView];
         
@@ -73,6 +79,7 @@
                                                                       attribute:targetConstraint.secondAttribute
                                                                      multiplier:targetConstraint.multiplier
                                                                        constant:targetConstraint.constant];
+        constraint.priority = targetConstraint.priority;
         [currentStateConstraints addObject:constraint];
     }
     
@@ -169,6 +176,7 @@
                                                                       attribute:templateConstraint.secondAttribute
                                                                      multiplier:templateConstraint.multiplier
                                                                        constant:templateConstraint.constant];
+        constraint.priority = templateConstraint.priority;
         [newConstraints addObject:constraint];
     }
     
