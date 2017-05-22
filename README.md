@@ -10,17 +10,17 @@ Design different states of a screen in IB and easily transition between them
 
 If a screen layout differs between orientations, setting up constraints to support both quickly becomes
 a mess. Maintaining the outlets to activate and deactivate the constraints isn't fun either. Wouldn't it
-be nice to separately maintain the diffent layouts and have an easy way to switch from one to another? 
+be nice to maintain the diffent layouts separately and have an easy way to switch from one to another? 
 We thought so, too.
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-TODO: `pod try LDOLayoutTemplates`?
+Alternatively, you can use `pod try https://github.com/lurado/LDOLayoutTemplates`.
 
 ## How To
 
-1. Layout your view for one orientation - let's assume landscape.
+1. Lay out your view for one orientation - let's assume landscape.
 1. Create a view outside the view hierarchy. This is your layout template where you design the 
     variation (portrait).
 1. Change the size of that view to portrait dimensions (not really necessary, but it makes 
@@ -56,7 +56,7 @@ Currently supported are:
 - `UICollectionView`
     - `scrollDirection` of the flow layout (if a flow layout is used)
 
-This list isn't very extensive. It's only what we initially needed and it will grow over time. Feel free to open an 
+This list isn't very extensive. It's only what we've initially needed and it will grow over time. Feel free to open an 
 issue or send a PR.
 
 You can easily support your own `IBInspectable` properties by implementing `-transferableTemplateAttributeKeyPaths` 
@@ -80,7 +80,7 @@ pod "LDOLayoutTemplates"
 
 The algorithm is actually pretty simple and basically works as follows:
 
-- Iterate all views of a template and collect all constraints between views with a target view. These 
+- Iterate over all views of a template and collect all constraints between views with a target view. These 
     are the constraints that will be _activated_ when `apply` is called.
 - Iterate over all the target views (the ones in your view controller's view having a `targetView` outlet 
     pointing at them) and collect all constraints between them. These constraints will be _deactivated_ when 
