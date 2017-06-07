@@ -1,5 +1,5 @@
 PODS:
-  - LDOLayoutTemplates (0.1.0)
+  - LDOLayoutTemplates (0.9.0)
 
 DEPENDENCIES:
   - LDOLayoutTemplates (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LDOLayoutTemplates: 74625f0b171a92f319cae6f3483d35c68e8531ea
+  LDOLayoutTemplates: a042b7e1154e3e09cfffa4889f759c98c930ed02
 
 PODFILE CHECKSUM: a0e311a706579a6c0087d79c69ac3b9d48bac3e2
 
