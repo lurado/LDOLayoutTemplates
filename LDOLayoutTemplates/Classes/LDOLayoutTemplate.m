@@ -11,7 +11,7 @@
 
 @implementation LDOLayoutTemplate
 
-+ (void)copyVariationAttributesFrom:(UIView *)source to:(UIView *)destination
++ (void)applyAttributesFrom:(UIView *)source to:(UIView *)destination
 {
     for (NSString *keyPath in [source transferableTemplateAttributeKeyPaths]) {
         [destination setValue:[source valueForKeyPath:keyPath] forKeyPath:keyPath];
@@ -55,7 +55,7 @@
         UIView *targetView = templateView.targetView;
         
         // capture attribute state
-        [self copyVariationAttributesFrom:targetView to:templateView];
+        [self applyAttributesFrom:targetView to:templateView];
         
 #if DEBUG
         NSAssert([currentStateTargetToTemplate objectForKey:targetView] == nil, @"Target view referenced more than once: %@", targetView);
@@ -64,7 +64,7 @@
     }
     
     // add constraints of `layoutTemplate` target views to `currentState` template views with the same target
-    // this essentially caputres the current set of constraints
+    // this essentially captures the current set of constraints
     NSSet<UIView *> *targetViews = [layoutTemplate targetViewsFrom:[layoutTemplate collectTemplateViews]];
     NSArray<NSLayoutConstraint *> *targetConstraints = [layoutTemplate relevantConstraintsFor:targetViews];
     NSMutableArray<NSLayoutConstraint *> *currentStateConstraints = [NSMutableArray new];
@@ -145,17 +145,13 @@
 
 - (void)apply
 {
-    NSSet<UIView *> *templateViews = [self collectTemplateViews];
-    
-    [self applyConstraints:templateViews];
-    
-    for (UIView *templateView in templateViews) {
-        [self.class copyVariationAttributesFrom:templateView to:templateView.targetView];
-    }
+    [self applyConstraints];
+    [self applyAttributes];
 }
 
-- (void)applyConstraints:(NSSet<UIView *> *)templateViews
+- (void)applyConstraints
 {
+    NSSet<UIView *> *templateViews = [self collectTemplateViews];
     NSSet<UIView *> *targetViews = [self targetViewsFrom:templateViews];
     
     // collect all constraints between target views (to be deactivated)
@@ -182,6 +178,15 @@
     
     [NSLayoutConstraint deactivateConstraints:currentConstraints];
     [NSLayoutConstraint activateConstraints:newConstraints];
+}
+
+- (void)applyAttributes
+{
+    NSSet<UIView *> *templateViews = [self collectTemplateViews];
+    
+    for (UIView *templateView in templateViews) {
+        [self.class applyAttributesFrom:templateView to:templateView.targetView];
+    }
 }
 
 @end

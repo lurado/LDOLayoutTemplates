@@ -16,6 +16,13 @@
 // the resulting template only restores the state of views that are also part of the given template
 + (instancetype)layoutTemplateForCurrentStateBasedOnTemplate:(LDOLayoutTemplate *)layoutTemplate;
 
+// same as calling `applyConstraints`, then `applyAttributes`
 - (void)apply;
+
+// copies over all constraints from `templateView` to `destinationView`
+- (void)applyConstraints;
+
+// copies over all attributes from `templateView` to `destinationView`
+- (void)applyAttributes;
 
 @end
