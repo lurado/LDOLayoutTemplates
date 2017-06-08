@@ -1,0 +1,6 @@
+framework module Pods_LDOLayoutTemplates_Example {
+  umbrella header "Pods-LDOLayoutTemplates_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

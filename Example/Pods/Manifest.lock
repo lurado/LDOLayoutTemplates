@@ -1,0 +1,16 @@
+PODS:
+  - LDOLayoutTemplates (0.9.0)
+
+DEPENDENCIES:
+  - LDOLayoutTemplates (from `../`)
+
+EXTERNAL SOURCES:
+  LDOLayoutTemplates:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LDOLayoutTemplates: a042b7e1154e3e09cfffa4889f759c98c930ed02
+
+PODFILE CHECKSUM: c5a61fcee3beab75557b980920605bdb3c80e814
+
+COCOAPODS: 1.2.1
