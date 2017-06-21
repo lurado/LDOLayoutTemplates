@@ -7,20 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0516994AC87D6234BA752D41CAFD4184 /* UICollectionView+LDOLayoutTemplates.h in Headers */ = {isa = PBXBuildFile; fileRef = 1899B293C88D10FF64EE1E4FF540C8B4 /* UICollectionView+LDOLayoutTemplates.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		16B64AEA0467616EB61918CC29C95AC0 /* LDOLayoutTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C8B26928CBB7BB9DC71E1D22CF6A92 /* LDOLayoutTemplate.m */; };
-		2A760B360110770238A02A62695B29BC /* UICollectionView+LDOLayoutTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EDA6D6280B02269AA894D30DEE9B64 /* UICollectionView+LDOLayoutTemplates.m */; };
-		5AD94F5B9AE1446DA65B4BF4B69CAD63 /* UIView+LDOLayoutTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 728BC09457B292984601891CCC9C358C /* UIView+LDOLayoutTemplates.m */; };
-		5DA2DDA45490B1B673829ABE5DF78762 /* LDOLayoutTemplates-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FF0EE886D8B3CD3176EB541FFADDE34A /* LDOLayoutTemplates-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B651EBC04ED9CC611644129A4D4A8CA /* UIView+LDOLayoutTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5D072A9B399A3BDC1A46040FD53E0 /* UIView+LDOLayoutTemplates.m */; };
+		5C76FE303C394E1C608A208022736AA6 /* LDOLayoutTemplate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07AF5F2E4FE97083E50590DDD8EF3106 /* LDOLayoutTemplate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71A523F92579FB27949414D2A7B841CD /* Pods-LDOLayoutTemplates_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2674986B1EE372D61C5AFA39F8B330E4 /* Pods-LDOLayoutTemplates_Example-dummy.m */; };
-		7216FF4AF77D25BF9AAE0356931542D4 /* UIScrollView+LDOLayoutTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = EA53BD2A8B9A0BA7F325D9BC53C86BD4 /* UIScrollView+LDOLayoutTemplates.m */; };
-		A18F397C6780E5CA230402D042E4E107 /* UIScrollView+LDOLayoutTemplates.h in Headers */ = {isa = PBXBuildFile; fileRef = 8331B76A4D8FF99BE8A9341446D89E9C /* UIScrollView+LDOLayoutTemplates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84084B4D40AC78F9F26803DA2E44BC94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		91209B296B55189022A901FD6D321D46 /* LDOLayoutAttributeTemplate.h in Headers */ = {isa = PBXBuildFile; fileRef = AB9CEE640A1E56C2D9F9CE442AB7D9E3 /* LDOLayoutAttributeTemplate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		96025E8186242DC33CD1B698507F126B /* LDOLayoutTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F23BB647EBD11AA65C3E58D0C69B2F9 /* LDOLayoutTemplate.m */; };
+		A949FFC2332EC5B3BF97C56C3F882D1B /* LDOLayoutTemplates-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D1C7234144802704DE7E6AC575703D /* LDOLayoutTemplates-dummy.m */; };
 		AD0B175A18DA1B45E49120E8781225DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		CCDF07575A9E7B3D6DBFA97AC3713E93 /* LDOLayoutTemplate.h in Headers */ = {isa = PBXBuildFile; fileRef = C40389E0132A95711761A1EE294241A9 /* LDOLayoutTemplate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD55F2E76BB397421EE7561DCB5F97A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		C0C56614BFB29FF3B00AC1CC06BA81D0 /* LDOLayoutTemplates-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FF0EE886D8B3CD3176EB541FFADDE34A /* LDOLayoutTemplates-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D65A660F1800BC4618C4C6D3367424B8 /* Pods-LDOLayoutTemplates_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F4D303314B7B74830CC1371F68E4B355 /* Pods-LDOLayoutTemplates_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DD7149B6573B653EE9E49F6E6EAF0105 /* LDOLayoutTemplates-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D1C7234144802704DE7E6AC575703D /* LDOLayoutTemplates-dummy.m */; };
-		F9C15523DEFA9731913827330D28C112 /* UIView+LDOLayoutTemplates.h in Headers */ = {isa = PBXBuildFile; fileRef = D084FBC705BEC6066889EF510476DD80 /* UIView+LDOLayoutTemplates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2F030262168A37C818E26364CB853D4 /* UIView+LDOLayoutTemplates.h in Headers */ = {isa = PBXBuildFile; fileRef = 3350E08B0B0A2AD5C03D2B039C67ED06 /* UIView+LDOLayoutTemplates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,35 +25,32 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 20B4E44A04EC4BE897558423245E4854;
+			remoteGlobalIDString = 940C8CD5D96E4F84CA77A4FEE929E9CC;
 			remoteInfo = LDOLayoutTemplates;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1899B293C88D10FF64EE1E4FF540C8B4 /* UICollectionView+LDOLayoutTemplates.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+LDOLayoutTemplates.h"; sourceTree = "<group>"; };
+		07AF5F2E4FE97083E50590DDD8EF3106 /* LDOLayoutTemplate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LDOLayoutTemplate.h; sourceTree = "<group>"; };
 		258B068D07040E1EC57050457FD40935 /* Pods-LDOLayoutTemplates_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LDOLayoutTemplates_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		2674986B1EE372D61C5AFA39F8B330E4 /* Pods-LDOLayoutTemplates_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LDOLayoutTemplates_Example-dummy.m"; sourceTree = "<group>"; };
 		2A6363406AD1EA29198B195E8F6CE5E6 /* Pods-LDOLayoutTemplates_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LDOLayoutTemplates_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		2DA5D072A9B399A3BDC1A46040FD53E0 /* UIView+LDOLayoutTemplates.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+LDOLayoutTemplates.m"; sourceTree = "<group>"; };
+		3350E08B0B0A2AD5C03D2B039C67ED06 /* UIView+LDOLayoutTemplates.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+LDOLayoutTemplates.h"; sourceTree = "<group>"; };
 		654D8B6358D268504C4EB14378AFEA1E /* LDOLayoutTemplates.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LDOLayoutTemplates.modulemap; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6AB182533917738D8E68A04CB8BF4EBE /* Pods-LDOLayoutTemplates_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LDOLayoutTemplates_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7252F01CF8055473A49EA6B0BB32D0BF /* Pods_LDOLayoutTemplates_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LDOLayoutTemplates_Example.framework; path = "Pods-LDOLayoutTemplates_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		728BC09457B292984601891CCC9C358C /* UIView+LDOLayoutTemplates.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+LDOLayoutTemplates.m"; sourceTree = "<group>"; };
 		7ED3C274DC1C414FE010E1C30173F3B9 /* Pods-LDOLayoutTemplates_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LDOLayoutTemplates_Example.release.xcconfig"; sourceTree = "<group>"; };
 		803DC107CA1EDC34D68AC1C5DADB781B /* LDOLayoutTemplates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LDOLayoutTemplates.framework; path = LDOLayoutTemplates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		81C8B26928CBB7BB9DC71E1D22CF6A92 /* LDOLayoutTemplate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LDOLayoutTemplate.m; sourceTree = "<group>"; };
-		8331B76A4D8FF99BE8A9341446D89E9C /* UIScrollView+LDOLayoutTemplates.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+LDOLayoutTemplates.h"; sourceTree = "<group>"; };
 		89EA2872EC646B04335216E633D40DB3 /* LDOLayoutTemplates-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LDOLayoutTemplates-prefix.pch"; sourceTree = "<group>"; };
 		8E8DCC1D193654F2F39F8E929B902F4D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F23BB647EBD11AA65C3E58D0C69B2F9 /* LDOLayoutTemplate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LDOLayoutTemplate.m; sourceTree = "<group>"; };
 		A1D1C7234144802704DE7E6AC575703D /* LDOLayoutTemplates-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LDOLayoutTemplates-dummy.m"; sourceTree = "<group>"; };
-		B6EDA6D6280B02269AA894D30DEE9B64 /* UICollectionView+LDOLayoutTemplates.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+LDOLayoutTemplates.m"; sourceTree = "<group>"; };
-		C40389E0132A95711761A1EE294241A9 /* LDOLayoutTemplate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LDOLayoutTemplate.h; sourceTree = "<group>"; };
-		D084FBC705BEC6066889EF510476DD80 /* UIView+LDOLayoutTemplates.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+LDOLayoutTemplates.h"; sourceTree = "<group>"; };
+		AB9CEE640A1E56C2D9F9CE442AB7D9E3 /* LDOLayoutAttributeTemplate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LDOLayoutAttributeTemplate.h; sourceTree = "<group>"; };
 		D40EBB3B011EA0667B16B8A5A8200E48 /* Pods-LDOLayoutTemplates_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LDOLayoutTemplates_Example-resources.sh"; sourceTree = "<group>"; };
 		D45C05BD2A615812975C89C0BD977BBE /* Pods-LDOLayoutTemplates_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LDOLayoutTemplates_Example-frameworks.sh"; sourceTree = "<group>"; };
-		EA53BD2A8B9A0BA7F325D9BC53C86BD4 /* UIScrollView+LDOLayoutTemplates.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+LDOLayoutTemplates.m"; sourceTree = "<group>"; };
 		F0024DEAF016B76894AB6152194EA8AE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F162E706001A4C1AE35C309EB51448D3 /* Pods-LDOLayoutTemplates_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LDOLayoutTemplates_Example.modulemap"; sourceTree = "<group>"; };
 		F4D303314B7B74830CC1371F68E4B355 /* Pods-LDOLayoutTemplates_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LDOLayoutTemplates_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -73,17 +67,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CA8745B397CC1BCBCA2848FF82BF985E /* Frameworks */ = {
+		BD3C262AD654A4B5952F82B1E56AF117 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD55F2E76BB397421EE7561DCB5F97A2 /* Foundation.framework in Frameworks */,
+				84084B4D40AC78F9F26803DA2E44BC94 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08D9CEAD0C110D5CEFE8C1B52001C96E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AB9CEE640A1E56C2D9F9CE442AB7D9E3 /* LDOLayoutAttributeTemplate.h */,
+				07AF5F2E4FE97083E50590DDD8EF3106 /* LDOLayoutTemplate.h */,
+				9F23BB647EBD11AA65C3E58D0C69B2F9 /* LDOLayoutTemplate.m */,
+				3350E08B0B0A2AD5C03D2B039C67ED06 /* UIView+LDOLayoutTemplates.h */,
+				2DA5D072A9B399A3BDC1A46040FD53E0 /* UIView+LDOLayoutTemplates.m */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		1D86B4B0FF64BC94672020A5B0F06A66 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,15 +98,6 @@
 				7252F01CF8055473A49EA6B0BB32D0BF /* Pods_LDOLayoutTemplates_Example.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		349949A18BCD06907CEDB423B5CCE94E /* LDOLayoutTemplates */ = {
-			isa = PBXGroup;
-			children = (
-				8A25D47258CE5BFBFCCDD28F592F9A5E /* Classes */,
-			);
-			name = LDOLayoutTemplates;
-			path = LDOLayoutTemplates;
 			sourceTree = "<group>";
 		};
 		73471E1B7D3DC924BF458AAF5CEF7729 /* Development Pods */ = {
@@ -124,27 +122,20 @@
 		7E23813F7738EF761C19FD17E6F64BA2 /* LDOLayoutTemplates */ = {
 			isa = PBXGroup;
 			children = (
-				349949A18BCD06907CEDB423B5CCE94E /* LDOLayoutTemplates */,
+				8961B182F287720D6ED2825225C4C9FE /* LDOLayoutTemplates */,
 				C4B8463EDB5E2A8F41C7571E91E24114 /* Support Files */,
 			);
 			name = LDOLayoutTemplates;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		8A25D47258CE5BFBFCCDD28F592F9A5E /* Classes */ = {
+		8961B182F287720D6ED2825225C4C9FE /* LDOLayoutTemplates */ = {
 			isa = PBXGroup;
 			children = (
-				C40389E0132A95711761A1EE294241A9 /* LDOLayoutTemplate.h */,
-				81C8B26928CBB7BB9DC71E1D22CF6A92 /* LDOLayoutTemplate.m */,
-				1899B293C88D10FF64EE1E4FF540C8B4 /* UICollectionView+LDOLayoutTemplates.h */,
-				B6EDA6D6280B02269AA894D30DEE9B64 /* UICollectionView+LDOLayoutTemplates.m */,
-				8331B76A4D8FF99BE8A9341446D89E9C /* UIScrollView+LDOLayoutTemplates.h */,
-				EA53BD2A8B9A0BA7F325D9BC53C86BD4 /* UIScrollView+LDOLayoutTemplates.m */,
-				D084FBC705BEC6066889EF510476DD80 /* UIView+LDOLayoutTemplates.h */,
-				728BC09457B292984601891CCC9C358C /* UIView+LDOLayoutTemplates.m */,
+				08D9CEAD0C110D5CEFE8C1B52001C96E /* Classes */,
 			);
-			name = Classes;
-			path = Classes;
+			name = LDOLayoutTemplates;
+			path = LDOLayoutTemplates;
 			sourceTree = "<group>";
 		};
 		B8548CF926B388E32CE48F5CDD3C1741 /* Pods-LDOLayoutTemplates_Example */ = {
@@ -214,28 +205,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B934411D6C0BFCDE781CBFDFF03787E3 /* Headers */ = {
+		A965995F4760BEFC8A5E2EE0773FAC04 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCDF07575A9E7B3D6DBFA97AC3713E93 /* LDOLayoutTemplate.h in Headers */,
-				5DA2DDA45490B1B673829ABE5DF78762 /* LDOLayoutTemplates-umbrella.h in Headers */,
-				0516994AC87D6234BA752D41CAFD4184 /* UICollectionView+LDOLayoutTemplates.h in Headers */,
-				A18F397C6780E5CA230402D042E4E107 /* UIScrollView+LDOLayoutTemplates.h in Headers */,
-				F9C15523DEFA9731913827330D28C112 /* UIView+LDOLayoutTemplates.h in Headers */,
+				91209B296B55189022A901FD6D321D46 /* LDOLayoutAttributeTemplate.h in Headers */,
+				5C76FE303C394E1C608A208022736AA6 /* LDOLayoutTemplate.h in Headers */,
+				C0C56614BFB29FF3B00AC1CC06BA81D0 /* LDOLayoutTemplates-umbrella.h in Headers */,
+				E2F030262168A37C818E26364CB853D4 /* UIView+LDOLayoutTemplates.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		20B4E44A04EC4BE897558423245E4854 /* LDOLayoutTemplates */ = {
+		940C8CD5D96E4F84CA77A4FEE929E9CC /* LDOLayoutTemplates */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88946C412B815D88E06A6D4544807076 /* Build configuration list for PBXNativeTarget "LDOLayoutTemplates" */;
+			buildConfigurationList = D026E6F779573F918B5B27362FA2462C /* Build configuration list for PBXNativeTarget "LDOLayoutTemplates" */;
 			buildPhases = (
-				C73B54FC3162DFCD3C7D9D46AD434029 /* Sources */,
-				CA8745B397CC1BCBCA2848FF82BF985E /* Frameworks */,
-				B934411D6C0BFCDE781CBFDFF03787E3 /* Headers */,
+				E9072C1061762FBA35A8FC8740C0BCD7 /* Sources */,
+				BD3C262AD654A4B5952F82B1E56AF117 /* Frameworks */,
+				A965995F4760BEFC8A5E2EE0773FAC04 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -285,7 +275,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				20B4E44A04EC4BE897558423245E4854 /* LDOLayoutTemplates */,
+				940C8CD5D96E4F84CA77A4FEE929E9CC /* LDOLayoutTemplates */,
 				A65C2EC03E407BAE7A43500C4AD6B079 /* Pods-LDOLayoutTemplates_Example */,
 			);
 		};
@@ -300,15 +290,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C73B54FC3162DFCD3C7D9D46AD434029 /* Sources */ = {
+		E9072C1061762FBA35A8FC8740C0BCD7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16B64AEA0467616EB61918CC29C95AC0 /* LDOLayoutTemplate.m in Sources */,
-				DD7149B6573B653EE9E49F6E6EAF0105 /* LDOLayoutTemplates-dummy.m in Sources */,
-				2A760B360110770238A02A62695B29BC /* UICollectionView+LDOLayoutTemplates.m in Sources */,
-				7216FF4AF77D25BF9AAE0356931542D4 /* UIScrollView+LDOLayoutTemplates.m in Sources */,
-				5AD94F5B9AE1446DA65B4BF4B69CAD63 /* UIView+LDOLayoutTemplates.m in Sources */,
+				96025E8186242DC33CD1B698507F126B /* LDOLayoutTemplate.m in Sources */,
+				A949FFC2332EC5B3BF97C56C3F882D1B /* LDOLayoutTemplates-dummy.m in Sources */,
+				5B651EBC04ED9CC611644129A4D4A8CA /* UIView+LDOLayoutTemplates.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +306,7 @@
 		C07010CA9256FD1B20D89B1DC1B6701E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LDOLayoutTemplates;
-			target = 20B4E44A04EC4BE897558423245E4854 /* LDOLayoutTemplates */;
+			target = 940C8CD5D96E4F84CA77A4FEE929E9CC /* LDOLayoutTemplates */;
 			targetProxy = 4FA7FEC16456736C2C08E04A50020500 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -368,7 +356,7 @@
 			};
 			name = Release;
 		};
-		4CEB682E6C13034DC1785C66CCF58916 /* Debug */ = {
+		48D6354A1ACA2FC3C986C75007F7D8EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FE6A213D90CB1914DB5D1D9755DB4586 /* LDOLayoutTemplates.xcconfig */;
 			buildSettings = {
@@ -400,38 +388,6 @@
 			};
 			name = Debug;
 		};
-		74A289D7085F3D871A4CDD60B12EC49C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE6A213D90CB1914DB5D1D9755DB4586 /* LDOLayoutTemplates.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/LDOLayoutTemplates/LDOLayoutTemplates-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LDOLayoutTemplates/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LDOLayoutTemplates/LDOLayoutTemplates.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = LDOLayoutTemplates;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		78293FE021675660539262C3BCC8F524 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7ED3C274DC1C414FE010E1C30173F3B9 /* Pods-LDOLayoutTemplates_Example.release.xcconfig */;
@@ -460,6 +416,38 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_LDOLayoutTemplates_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C0C36934B867699094F7456D300A88F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE6A213D90CB1914DB5D1D9755DB4586 /* LDOLayoutTemplates.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LDOLayoutTemplates/LDOLayoutTemplates-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LDOLayoutTemplates/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LDOLayoutTemplates/LDOLayoutTemplates.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = LDOLayoutTemplates;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -573,11 +561,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88946C412B815D88E06A6D4544807076 /* Build configuration list for PBXNativeTarget "LDOLayoutTemplates" */ = {
+		D026E6F779573F918B5B27362FA2462C /* Build configuration list for PBXNativeTarget "LDOLayoutTemplates" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4CEB682E6C13034DC1785C66CCF58916 /* Debug */,
-				74A289D7085F3D871A4CDD60B12EC49C /* Release */,
+				48D6354A1ACA2FC3C986C75007F7D8EF /* Debug */,
+				C0C36934B867699094F7456D300A88F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,14 +7,17 @@
 //
 
 #import "LDOLayoutTemplate.h"
+#import "LDOLayoutAttributeTemplate.h"
 #import "UIView+LDOLayoutTemplates.h"
 
 @implementation LDOLayoutTemplate
 
 + (void)applyAttributesFrom:(UIView *)source to:(UIView *)destination
 {
-    for (NSString *keyPath in [source transferableTemplateAttributeKeyPaths]) {
-        [destination setValue:[source valueForKeyPath:keyPath] forKeyPath:keyPath];
+    if ([source conformsToProtocol:@protocol(LDOLayoutAttributeTemplate)]) {
+        for (NSString *keyPath in [(UIView<LDOLayoutAttributeTemplate> *)source transferableTemplateAttributeKeyPaths]) {
+            [destination setValue:[source valueForKeyPath:keyPath] forKeyPath:keyPath];
+        }
     }
 }
 

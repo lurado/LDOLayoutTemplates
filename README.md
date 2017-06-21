@@ -10,12 +10,12 @@ Design different states of a screen in IB and easily transition between them
 
 If a screen layout differs between orientations, setting up constraints to support both quickly becomes
 a mess. Maintaining the outlets to activate and deactivate the constraints isn't fun either. Wouldn't it
-be nice to maintain the diffent layouts separately and have an easy way to switch from one to another? 
+be nice to design the diffent layouts separately and have an easy way to switch from one to another? 
 We thought so, too.
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo, open workspace in the `Example` folder and hit run.
 Alternatively, you can use `pod try https://github.com/lurado/LDOLayoutTemplates`.
 
 ## How To
@@ -25,7 +25,7 @@ Alternatively, you can use `pod try https://github.com/lurado/LDOLayoutTemplates
     variation (portrait).
 1. Change the size of that view to portrait dimensions (not really necessary, but it makes 
     designing it easier).
-1. Copy or re-create the views that should vary from the view controller's view to the template view.
+1. Copy or re-create the views that should vary from the view controller's view to the template view. If you copy your views, make sure to disconnect any outlets.
 1. Modify the constraints as needed.
 1. Connect the `targetView` of the template views to their corresponding views in the view controller's 
     view. It's imporant to connect all views paricipating in constraints of a template. 
@@ -43,24 +43,13 @@ Alternatively, you can use `pod try https://github.com/lurado/LDOLayoutTemplates
 
 ## Attribute changes
 
-Not only the constraint setup can vary for a template, view attributes are supported, too. Most notably that's
-`alpha` and `hidden`. Set a template view's `alpha` value to `0` and it will disappear when applying the template.
+Not only the constraint setup can vary for a template, view attributes can be different, too. To support
+this let a view conform to `LDOLayoutAttributeTemplate` and return the key paths that should be changed 
+from `-transferableTemplateAttributeKeyPaths`.
 
-Currently supported are:
-
-- `UIView`
-    - `alpha`
-    - `hidden`
-- `UIScrollView`
-    - `scrollEnabled`
-- `UICollectionView`
-    - `scrollDirection` of the flow layout (if a flow layout is used)
-
-This list isn't very extensive. It's only what we've initially needed and it will grow over time. Feel free to open an 
-issue or send a PR.
-
-You can easily support your own `IBInspectable` properties by implementing `-transferableTemplateAttributeKeyPaths` 
-in your view subclass. That's all - the rest will be taken care of.
+For example return the names of the `IBInspectable` properties of your custom views to have them change between
+layouts. Or if you want `alpha` and `hidden` of all involved views to change when a template is applied, 
+implement a class extension like `UIView+LayoutTemplateAttributes` in the example project.
 
 ## Limitations
 

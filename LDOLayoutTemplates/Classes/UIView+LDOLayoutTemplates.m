@@ -21,12 +21,4 @@
     objc_setAssociatedObject(self, @selector(targetView), targetView, OBJC_ASSOCIATION_ASSIGN);
 }
 
-- (NSArray<NSString *> *)transferableTemplateAttributeKeyPaths
-{
-    return @[
-             @"alpha",
-             @"hidden"
-             ];
-}
-
 @end

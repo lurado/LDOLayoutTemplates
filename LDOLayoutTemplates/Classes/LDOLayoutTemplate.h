@@ -6,7 +6,7 @@
 //  Copyright (c) 2017 Julian Raschke und Sebastian Ludwig GbR. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 @interface LDOLayoutTemplate : NSObject
 

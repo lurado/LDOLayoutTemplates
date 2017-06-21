@@ -6,12 +6,10 @@
 //  Copyright (c) 2017 Julian Raschke und Sebastian Ludwig GbR. All rights reserved.
 //
 
-@import UIKit;
+#import <Foundation/Foundation.h>
 
 @interface UIView (LDOLayoutTemplates)
 
 @property (nonatomic, weak) IBOutlet UIView *targetView;
-
-- (NSArray<NSString *> *)transferableTemplateAttributeKeyPaths;
 
 @end

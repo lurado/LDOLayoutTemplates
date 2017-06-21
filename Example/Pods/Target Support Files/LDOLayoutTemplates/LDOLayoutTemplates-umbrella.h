@@ -10,9 +10,8 @@
 #endif
 #endif
 
+#import "LDOLayoutAttributeTemplate.h"
 #import "LDOLayoutTemplate.h"
-#import "UICollectionView+LDOLayoutTemplates.h"
-#import "UIScrollView+LDOLayoutTemplates.h"
 #import "UIView+LDOLayoutTemplates.h"
 
 FOUNDATION_EXPORT double LDOLayoutTemplatesVersionNumber;
