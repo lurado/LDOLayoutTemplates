@@ -135,8 +135,10 @@
     for (UIView *view in views) {
         for (NSLayoutConstraint *constraint in view.constraints) {
             BOOL betweenViews = [views containsObject:constraint.firstItem] && [views containsObject:constraint.secondItem];
-            BOOL sizeConstraint = [constraint isMemberOfClass:[NSLayoutConstraint class]] && (constraint.firstAttribute == NSLayoutAttributeHeight || constraint.firstAttribute == NSLayoutAttributeWidth);
-            sizeConstraint = sizeConstraint && ![constraint.identifier containsString:@"-Encapsulated-Layout-"];
+            BOOL sizeConstraint = constraint.secondItem == nil
+                    && (constraint.firstAttribute == NSLayoutAttributeHeight || constraint.firstAttribute == NSLayoutAttributeWidth)
+                    && [constraint isMemberOfClass:[NSLayoutConstraint class]]
+                    && ![constraint.identifier containsString:@"-Encapsulated-Layout-"];
             if (betweenViews || sizeConstraint) {
                 [constraints addObject:constraint];
             }
