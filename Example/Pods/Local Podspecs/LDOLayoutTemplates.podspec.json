@@ -1,6 +1,6 @@
 {
   "name": "LDOLayoutTemplates",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "summary": "Design different states of a screen in IB and easily transition between them.",
   "description": "Cleanly design different variations of a layout in Interface Builder. No constraint mess.",
   "homepage": "https://github.com/lurado/LDOLayoutTemplates",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/lurado/LDOLayoutTemplates.git",
-    "tag": "0.9.2"
+    "tag": "0.9.3"
   },
   "platforms": {
     "ios": "8.0"

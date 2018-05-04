@@ -1,7 +1,7 @@
 # see http://guides.cocoapods.org/syntax/podspec.html
 Pod::Spec.new do |s|
   s.name             = 'LDOLayoutTemplates'
-  s.version          = '0.9.2'
+  s.version          = '0.9.3'
   s.summary          = 'Design different states of a screen in IB and easily transition between them.'
 
   s.description      = <<-DESC
