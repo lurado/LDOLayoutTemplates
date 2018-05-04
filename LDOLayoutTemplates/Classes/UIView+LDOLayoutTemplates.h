@@ -12,4 +12,9 @@
 
 @property (nonatomic, weak) IBOutlet UIView *targetView;
 
+// Add an Inspector property to take a comma separated list of attributes that will be transferred
+@property (nonatomic) IBInspectable NSString *transferredTemplateAttributeKeyPaths;
+
+- (NSArray<NSString *> *)transferableTemplateAttributeKeyPaths;
+
 @end

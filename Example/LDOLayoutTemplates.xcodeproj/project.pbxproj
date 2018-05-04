@@ -17,7 +17,6 @@
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		9EF2A5B11EFAACD200A30C2C /* UIView+LayoutTemplateAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2A5B01EFAACD200A30C2C /* UIView+LayoutTemplateAttributes.m */; };
 		C14F670819704BE9427800A1 /* Pods_LDOLayoutTemplates_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5F63140F4E3EC03BE2FCAC /* Pods_LDOLayoutTemplates_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,8 +42,6 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E8FFD941EB3924700669FE0 /* LDOLayoutTemplates.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = LDOLayoutTemplates.podspec; path = ../LDOLayoutTemplates.podspec; sourceTree = "<group>"; };
-		9EF2A5AF1EFAACD200A30C2C /* UIView+LayoutTemplateAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayoutTemplateAttributes.h"; sourceTree = "<group>"; };
-		9EF2A5B01EFAACD200A30C2C /* UIView+LayoutTemplateAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutTemplateAttributes.m"; sourceTree = "<group>"; };
 		BF5F63140F4E3EC03BE2FCAC /* Pods_LDOLayoutTemplates_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LDOLayoutTemplates_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -112,8 +109,6 @@
 				6003F59D195388D20070C39A /* LDOAppDelegate.m */,
 				6003F5A5195388D20070C39A /* LDOViewController.h */,
 				6003F5A6195388D20070C39A /* LDOViewController.m */,
-				9EF2A5AF1EFAACD200A30C2C /* UIView+LayoutTemplateAttributes.h */,
-				9EF2A5B01EFAACD200A30C2C /* UIView+LayoutTemplateAttributes.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -263,7 +258,6 @@
 				6003F59E195388D20070C39A /* LDOAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* LDOViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				9EF2A5B11EFAACD200A30C2C /* UIView+LayoutTemplateAttributes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

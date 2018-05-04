@@ -44,12 +44,8 @@ Alternatively, you can use `pod try https://github.com/lurado/LDOLayoutTemplates
 ## Attribute changes
 
 Not only the constraint setup can vary for a template, view attributes can be different, too. To support
-this let a view conform to `LDOLayoutAttributeTemplate` and return the key paths that should be changed 
-from `-transferableTemplateAttributeKeyPaths`.
-
-For example return the names of the `IBInspectable` properties of your custom views to have them change between
-layouts. Or if you want `alpha` and `hidden` of all involved views to change when a template is applied, 
-implement a class extension like `UIView+LayoutTemplateAttributes` in the example project.
+this either add a list of comma separated attributes to Transferred Template Attribute Key Paths in the 
+Attribute Inspector in Interface Builder or override `-transferableTemplateAttributeKeyPaths` in your `UIView` subclass.
 
 ## Limitations
 
