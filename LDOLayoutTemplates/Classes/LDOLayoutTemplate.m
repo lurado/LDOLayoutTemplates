@@ -39,6 +39,8 @@
 
 + (instancetype)layoutTemplateForCurrentStateBasedOnTemplate:(LDOLayoutTemplate *)layoutTemplate
 {
+    NSAssert(layoutTemplate.templateView, @"Template view of base template must not be nil");
+    
     UIView *rootTemplateView = [[layoutTemplate.templateView class] new];
     rootTemplateView.translatesAutoresizingMaskIntoConstraints = NO;
     rootTemplateView.frame = layoutTemplate.destinationView.frame;
