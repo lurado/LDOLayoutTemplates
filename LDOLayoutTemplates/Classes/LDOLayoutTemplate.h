@@ -10,11 +10,11 @@
 
 @interface LDOLayoutTemplate : NSObject
 
-@property (nonatomic, weak) IBOutlet UIView *destinationView;
-@property (nonatomic) IBOutlet UIView *templateView;
+@property (nullable, nonatomic, weak) IBOutlet UIView *destinationView;
+@property (nullable, nonatomic) IBOutlet UIView *templateView;
 
 // the resulting template only restores the state of views that are also part of the given template
-+ (instancetype)layoutTemplateForCurrentStateBasedOnTemplate:(LDOLayoutTemplate *)layoutTemplate;
++ (nonnull instancetype)layoutTemplateForCurrentStateBasedOnTemplate:(nonnull LDOLayoutTemplate *)layoutTemplate;
 
 // same as calling `applyConstraints`, then `applyAttributes`
 - (void)apply;

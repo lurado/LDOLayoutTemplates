@@ -1,15 +1,15 @@
 //
-//  LDOViewController.m
-//  LDOLayoutTemplates
+//  ViewController.m
+//  LDOLayoutTemplates Example
 //
 //  Created by Sebastian Ludwig on 13.03.2017.
 //  Copyright (c) 2017 Julian Raschke und Sebastian Ludwig GbR. All rights reserved.
 //
 
-#import "LDOViewController.h"
-@import LDOLayoutTemplates;
+#import "ViewController.h"
+#import "LDOLayoutTemplate.h"
 
-@interface LDOViewController ()
+@interface ViewController ()
 
 @property (nonatomic) LDOLayoutTemplate *initialState;
 @property (nonatomic, weak) IBOutlet LDOLayoutTemplate *firstLayout;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation LDOViewController
+@implementation ViewController
 
 - (void)viewDidLoad
 {
@@ -40,9 +40,10 @@
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
-    if (size.width > size.height) {
-        [self applySecond];
-    }
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        [self applyFirst];
+    } completion:nil];
 }
 
 - (IBAction)reset
