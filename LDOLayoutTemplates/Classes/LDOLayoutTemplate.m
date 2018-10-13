@@ -138,6 +138,7 @@
                     && constraint.secondItem == nil
                     && [views containsObject:constraint.firstItem]
                     && [constraint isMemberOfClass:[NSLayoutConstraint class]]
+                    // encapsulated layout constraints are added by UIKit - we don't care about them. Read http://aplus.rs/2017/one-solution-for-90pct-auto-layout/ for some background
                     && ![constraint.identifier containsString:@"-Encapsulated-Layout-"];
             if (betweenViews || sizeConstraint) {
                 [constraints addObject:constraint];
