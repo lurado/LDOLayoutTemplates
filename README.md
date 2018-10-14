@@ -1,22 +1,77 @@
 # LDOLayoutTemplates
 
-Design different states of a screen in IB and easily transition between them
+Visually design multiple layouts of a view in IB and easily transition between them
 
 [![Version](https://img.shields.io/cocoapods/v/LDOLayoutTemplates.svg?style=flat)](http://cocoapods.org/pods/LDOLayoutTemplates)
 [![License](https://img.shields.io/cocoapods/l/LDOLayoutTemplates.svg?style=flat)](http://cocoapods.org/pods/LDOLayoutTemplates)
 [![Platform](https://img.shields.io/cocoapods/p/LDOLayoutTemplates.svg?style=flat)](http://cocoapods.org/pods/LDOLayoutTemplates)
 
+### Get this...
+
+![Demo](Screenshots/ComplexExample.gif)
+
+### ...with this
+
+```Swift
+class ComplexViewController: UIViewController {
+    @IBOutlet weak var portraitLargeEventsLayout: LDOLayoutTemplate!
+    @IBOutlet weak var landscapeLargeEventsLayout: LDOLayoutTemplate!
+    private var defaultLayout: LDOLayoutTemplate!
+    private var largeListLayoutActive = false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        defaultLayout = LDOLayoutTemplate(forCurrentStateBasedOn: portraitLargeEventsLayout)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        guard largeListLayoutActive else { return }
+        
+        coordinator.animate(alongsideTransition: { _ in
+            if size.width > size.height {
+                self.landscapeLargeEventsLayout.apply()
+            } else {
+                self.portraitLargeEventsLayout.apply()
+            }
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    @IBAction func toggleLargeListLayout() {
+        view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.3) {
+            if self.largeListLayoutActive {
+                self.defaultLayout.apply()
+            } else {
+                if self.view.bounds.width > self.view.bounds.height {
+                    self.landscapeLargeEventsLayout.apply()
+                } else {
+                    self.portraitLargeEventsLayout.apply()
+                }
+            }
+            self.view.layoutIfNeeded()
+            self.largeListLayoutActive.toggle()
+        }
+    }
+}
+```
+
 ## Motivation
 
-If a screen layout differs between orientations, setting up constraints to support both quickly becomes
-a mess. Maintaining the outlets to activate and deactivate the constraints isn't fun either. Wouldn't it
-be nice to design the diffent layouts separately and have an easy way to switch from one to another? 
+Visual lay outing in IB is great, we truly love it!
+However if a screen layout differs between orientations or if a view has two modes (large and a collapsed mode for example), setting up constraints to support both quickly becomes a mess.
+Maintaining the outlets to activate and deactivate the constraints isn't fun either.
+Things only get worse if you have more than two variations.
+Wouldn't it be nice to design the different layouts separately and have an easy way to switch from one to another? 
 We thought so, too.
 
 ## Example
 
 To run the example project, clone the repo, open workspace in the `Example` folder and hit run.
-Alternatively, you can use `pod try https://github.com/lurado/LDOLayoutTemplates`.
+Alternatively, you can use `pod try https://github.com/lurado/LDOLayoutTemplates`. 
+The complex example only works on iPad.
 
 ## How To
 
@@ -28,7 +83,7 @@ Alternatively, you can use `pod try https://github.com/lurado/LDOLayoutTemplates
 1. Copy or re-create the views that should vary from the view controller's view to the template view. If you copy your views, make sure to disconnect any outlets.
 1. Modify the constraints as needed.
 1. Connect the `targetView` of the template views to their corresponding views in the view controller's 
-    view. It's imporant to connect all views paricipating in constraints of a template. 
+    view. It's important to connect all views participating in constraints of a template. 
     (Also just ignore the `targetView` outlet on the view controller views.)
 1. Create an object and set its class to `LDOLayoutTemplate`.
 1. Connect the `destinationView` outlet to the view controllers root view.
@@ -70,7 +125,7 @@ The algorithm is actually pretty simple and basically works as follows:
 - Iterate over all the target views (the ones in your view controller's view having a `targetView` outlet 
     pointing at them) and collect all constraints between them. These constraints will be _deactivated_ when 
     `apply` is called.
-- Besides the "between views" constraints, width and height constraints are collected as well.
+- Besides the "between views" constraints, width and height constraints are collected as well and handled accordingly.
 
 ## Author
 
