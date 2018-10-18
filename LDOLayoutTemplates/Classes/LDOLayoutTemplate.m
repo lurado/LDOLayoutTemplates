@@ -37,7 +37,7 @@
     }
 }
 
-+ (instancetype)layoutTemplateForCurrentStateBasedOnTemplate:(LDOLayoutTemplate *)layoutTemplate
++ (instancetype)layoutTemplateWithCurrentStateForViewsInTemplate:(LDOLayoutTemplate *)layoutTemplate
 {
     NSAssert(layoutTemplate.templateView, @"Template view of base template must not be nil");
     

@@ -14,7 +14,7 @@
 @property (nullable, nonatomic) IBOutlet UIView *templateView;
 
 // the resulting template only restores the state of views that are also part of the given template
-+ (nonnull instancetype)layoutTemplateForCurrentStateBasedOnTemplate:(nonnull LDOLayoutTemplate *)layoutTemplate;
++ (nonnull instancetype)layoutTemplateWithCurrentStateForViewsInTemplate:(nonnull LDOLayoutTemplate *)layoutTemplate NS_SWIFT_NAME(init(withCurrentStateForViewsIn:));
 
 // same as calling `applyConstraints`, then `applyAttributes`
 - (void)apply;
