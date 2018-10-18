@@ -110,13 +110,16 @@
     
     for (UIView *view in views) {
         for (NSLayoutConstraint *constraint in view.constraints) {
+            // Storyboard constraints have `shouldBeArchived` set to YES - we only care about these
+            // Otherwise we would mess with Apples constraints created at runtime, for example encapsulated layout constraints
+            if (!constraint.shouldBeArchived) {
+                continue;
+            }
             BOOL betweenViews = [views containsObject:constraint.firstItem] && [views containsObject:constraint.secondItem];
             BOOL sizeConstraint = (constraint.firstAttribute == NSLayoutAttributeHeight || constraint.firstAttribute == NSLayoutAttributeWidth)
-                    && constraint.secondItem == nil
-                    && [views containsObject:constraint.firstItem]
-                    && [constraint isMemberOfClass:[NSLayoutConstraint class]]
-                    // encapsulated layout constraints are added by UIKit - we don't care about them. Read http://aplus.rs/2017/one-solution-for-90pct-auto-layout/ for some background
-                    && ![constraint.identifier containsString:@"-Encapsulated-Layout-"];
+                && constraint.secondItem == nil
+                && [views containsObject:constraint.firstItem]
+                && [constraint isMemberOfClass:[NSLayoutConstraint class]];
             if (betweenViews || sizeConstraint) {
                 [constraints addObject:constraint];
             }
