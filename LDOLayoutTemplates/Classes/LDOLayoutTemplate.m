@@ -67,8 +67,8 @@
     NSSet<NSLayoutConstraint *> *targetConstraints = [self.class relevantConstraintsFor:targetViews];
     NSMutableArray<NSLayoutConstraint *> *currentStateConstraints = [NSMutableArray new];
     for (NSLayoutConstraint *targetConstraint in targetConstraints) {
-        UIView *firstItem = targetConstraint.firstItem ? [currentLayoutTargetToTemplateMap objectForKey:targetConstraint.firstItem] : nil;
-        UIView *secondItem = targetConstraint.secondItem ? [currentLayoutTargetToTemplateMap objectForKey:targetConstraint.secondItem] : nil;
+        UIView *firstItem = [currentLayoutTargetToTemplateMap objectForKey:targetConstraint.firstItem];
+        UIView *secondItem = [currentLayoutTargetToTemplateMap objectForKey:targetConstraint.secondItem];
         
         NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:firstItem
                                                                       attribute:targetConstraint.firstAttribute
