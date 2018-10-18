@@ -78,6 +78,7 @@
                                                                      multiplier:targetConstraint.multiplier
                                                                        constant:targetConstraint.constant];
         constraint.priority = targetConstraint.priority;
+        constraint.shouldBeArchived = targetConstraint.shouldBeArchived;
         [currentStateConstraints addObject:constraint];
     }
     
@@ -176,6 +177,7 @@
                                                                      multiplier:templateConstraint.multiplier
                                                                        constant:templateConstraint.constant];
         constraint.priority = templateConstraint.priority;
+        constraint.shouldBeArchived = templateConstraint.shouldBeArchived;
         [newConstraints addObject:constraint];
     }
     
