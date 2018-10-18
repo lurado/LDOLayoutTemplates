@@ -11,7 +11,7 @@
 
 @interface ViewController ()
 
-@property (nonatomic) LDOLayoutTemplate *initialState;
+@property (nonatomic) LDOLayoutTemplate *defaultLayout;
 @property (nonatomic, weak) IBOutlet LDOLayoutTemplate *firstLayout;
 @property (nonatomic, weak) IBOutlet LDOLayoutTemplate *secondLayout;
 
@@ -23,7 +23,7 @@
 {
     [super viewDidLoad];
     
-    self.initialState = [LDOLayoutTemplate layoutTemplateForCurrentStateBasedOnTemplate:self.firstLayout];
+    self.defaultLayout = [LDOLayoutTemplate layoutTemplateWithCurrentStateForViewsInTemplate:self.firstLayout];
 }
 
 - (void)applyLayoutTemplate:(LDOLayoutTemplate *)template
@@ -48,7 +48,7 @@
 
 - (IBAction)reset
 {
-    [self applyLayoutTemplate:self.initialState];
+    [self applyLayoutTemplate:self.defaultLayout];
 }
 
 - (IBAction)applyFirst

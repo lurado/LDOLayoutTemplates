@@ -10,11 +10,10 @@
 
 @interface LDOLayoutTemplate : NSObject
 
-@property (nullable, nonatomic, weak) IBOutlet UIView *destinationView;
-@property (nullable, nonatomic) IBOutlet UIView *templateView;
+@property (nullable, nonatomic, strong) IBOutlet UIView *templateView;  // `strong` to keep the template view alive
 
 // the resulting template only restores the state of views that are also part of the given template
-+ (nonnull instancetype)layoutTemplateForCurrentStateBasedOnTemplate:(nonnull LDOLayoutTemplate *)layoutTemplate;
++ (nonnull instancetype)layoutTemplateWithCurrentStateForViewsInTemplate:(nonnull LDOLayoutTemplate *)layoutTemplate NS_SWIFT_NAME(init(withCurrentStateForViewsIn:));
 
 // same as calling `applyConstraints`, then `applyAttributes`
 - (void)apply;
