@@ -37,20 +37,20 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func toggleLargeListLayout() {
-        view.layoutIfNeeded()
+        self.largeListLayoutActive.toggle()
         
+        view.layoutIfNeeded()
         UIView.animate(withDuration: 0.3) {
             if self.largeListLayoutActive {
-                self.defaultLayout.apply()
-            } else {
                 if self.view.bounds.width > self.view.bounds.height {
                     self.landscapeLargeListLayout.apply()
                 } else {
                     self.portraitLargeListLayout.apply()
                 }
+            } else {
+                self.defaultLayout.apply()
             }
             self.view.layoutIfNeeded()
-            self.largeListLayoutActive.toggle()
         }
     }
 }
