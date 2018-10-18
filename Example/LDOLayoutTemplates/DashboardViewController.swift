@@ -22,36 +22,32 @@ class DashboardViewController: UIViewController {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        // default layout isn't specialized for either orientation, so we don't need to bother
-        guard largeListLayoutActive else { return }
         
-        // the large list layouts are different between landscape and portrait
         coordinator.animate(alongsideTransition: { _ in
-            if size.width > size.height {
-                self.landscapeLargeListLayout.apply()
-            } else {
-                self.portraitLargeListLayout.apply()
-            }
-            self.view.layoutIfNeeded()
-        }, completion: nil)
+            self.applyLayout(for: size)
+        })
     }
     
     @IBAction func toggleLargeListLayout() {
-        self.largeListLayoutActive.toggle()
+        largeListLayoutActive.toggle()
         
         view.layoutIfNeeded()
         UIView.animate(withDuration: 0.3) {
-            if self.largeListLayoutActive {
-                if self.view.bounds.width > self.view.bounds.height {
-                    self.landscapeLargeListLayout.apply()
-                } else {
-                    self.portraitLargeListLayout.apply()
-                }
-            } else {
-                self.defaultLayout.apply()
-            }
-            self.view.layoutIfNeeded()
+            self.applyLayout(for: self.view.bounds.size)
         }
+    }
+    
+    private func applyLayout(for size: CGSize) {
+        if largeListLayoutActive {
+            if size.width > size.height {
+                landscapeLargeListLayout.apply()
+            } else {
+                portraitLargeListLayout.apply()
+            }
+        } else {
+            defaultLayout.apply()
+        }
+        view.layoutIfNeeded()
     }
 }
 

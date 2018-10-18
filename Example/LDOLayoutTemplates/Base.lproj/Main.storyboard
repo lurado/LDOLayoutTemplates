@@ -58,8 +58,8 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKW-p8-moz">
-                                        <rect key="frame" x="-7" y="72" width="123" height="0.0"/>
-                                        <state key="normal" title="Complex Example"/>
+                                        <rect key="frame" x="-14" y="72" width="137" height="0.0"/>
+                                        <state key="normal" title="Dashboard Example"/>
                                         <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
                                         <connections>
                                             <segue destination="urE-sZ-FeA" kind="show" id="WzZ-Gh-zro"/>
