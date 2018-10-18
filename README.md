@@ -8,7 +8,7 @@ Visually design multiple layouts of a view in IB and easily transition between t
 
 ### Get this...
 
-![Demo](Screenshots/ComplexExample.gif)
+![Demo](Screenshots/DashboardExample.gif)
 
 ### ...with this
 
