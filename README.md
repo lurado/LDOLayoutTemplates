@@ -14,45 +14,47 @@ Visually design multiple layouts of a view in IB and easily transition between t
 
 ```Swift
 class ComplexViewController: UIViewController {
-    @IBOutlet weak var portraitLargeEventsLayout: LDOLayoutTemplate!
-    @IBOutlet weak var landscapeLargeEventsLayout: LDOLayoutTemplate!
+    @IBOutlet weak var portraitLargeListLayout: LDOLayoutTemplate!
+    @IBOutlet weak var landscapeLargeListLayout: LDOLayoutTemplate!
     private var defaultLayout: LDOLayoutTemplate!
     private var largeListLayoutActive = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        defaultLayout = LDOLayoutTemplate(forCurrentStateBasedOn: portraitLargeEventsLayout)
+        defaultLayout = LDOLayoutTemplate(forCurrentStateBasedOn: portraitLargeListLayout)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
+        // default layout isn't specialized for either orientation, so we don't need to bother
         guard largeListLayoutActive else { return }
         
+        // the large list layouts are different between landscape and portrait
         coordinator.animate(alongsideTransition: { _ in
             if size.width > size.height {
-                self.landscapeLargeEventsLayout.apply()
+                self.landscapeLargeListLayout.apply()
             } else {
-                self.portraitLargeEventsLayout.apply()
+                self.portraitLargeListLayout.apply()
             }
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
     
     @IBAction func toggleLargeListLayout() {
-        view.layoutIfNeeded()
+        self.largeListLayoutActive.toggle()
         
+        view.layoutIfNeeded()
         UIView.animate(withDuration: 0.3) {
             if self.largeListLayoutActive {
-                self.defaultLayout.apply()
-            } else {
                 if self.view.bounds.width > self.view.bounds.height {
-                    self.landscapeLargeEventsLayout.apply()
+                    self.landscapeLargeListLayout.apply()
                 } else {
-                    self.portraitLargeEventsLayout.apply()
+                    self.portraitLargeListLayout.apply()
                 }
+            } else {
+                self.defaultLayout.apply()
             }
             self.view.layoutIfNeeded()
-            self.largeListLayoutActive.toggle()
         }
     }
 }
