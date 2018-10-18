@@ -13,27 +13,28 @@
 
 + (void)applyAttributesFrom:(UIView *)source to:(UIView *)destination
 {
-    for (NSString *keyPath in [source transferableTemplateAttributeKeyPaths]) {
+    for (NSString *keyPath in source.transferableTemplateAttributeKeyPaths) {
         [destination setValue:[source valueForKeyPath:keyPath] forKeyPath:keyPath];
     }
 }
 
-+ (void)copyViewHierarchyFromRootView:(UIView *)sourceRootView toRootView:(UIView *)destinationRootView
++ (void)copyViewHierarchyFromView:(UIView *)source toView:(UIView *)destination
 {
-    for (__kindof UIView *sourceSubview in sourceRootView.subviews) {
-        UIView *copy;
+    for (__kindof UIView *sourceSubview in source.subviews) {
+        UIView *subviewCopy;
         if ([sourceSubview isKindOfClass:[UICollectionView class]]) {
-            copy = [[UICollectionView alloc] initWithFrame:CGRectZero
-                                      collectionViewLayout:[sourceSubview collectionViewLayout]];
+            UICollectionViewLayout *layoutCopy = [[sourceSubview collectionViewLayout].class new];
+            subviewCopy = [[UICollectionView alloc] initWithFrame:CGRectZero
+                                             collectionViewLayout:layoutCopy];
         } else {
-            copy = [[sourceSubview class] new];
+            subviewCopy = [sourceSubview.class new];
         }
         
-        copy.targetView = [sourceSubview targetView];
+        subviewCopy.targetView = sourceSubview.targetView;
         
-        [destinationRootView addSubview:copy];
+        [destination addSubview:subviewCopy];
         
-        [self copyViewHierarchyFromRootView:sourceSubview toRootView:copy];
+        [self copyViewHierarchyFromView:sourceSubview toView:subviewCopy];
     }
 }
 
@@ -41,36 +42,33 @@
 {
     NSAssert(layoutTemplate.templateView, @"Template view of base template must not be nil");
     
-    UIView *rootTemplateView = [[layoutTemplate.templateView class] new];
+    UIView *rootTemplateView = [layoutTemplate.templateView.class new];
     rootTemplateView.translatesAutoresizingMaskIntoConstraints = NO;
     rootTemplateView.targetView = layoutTemplate.templateView.targetView;
     
-    [self copyViewHierarchyFromRootView:layoutTemplate.templateView toRootView:rootTemplateView];
+    [self copyViewHierarchyFromView:layoutTemplate.templateView toView:rootTemplateView];
     
-    LDOLayoutTemplate *currentState = [LDOLayoutTemplate new];
-    currentState.templateView = rootTemplateView;
+    LDOLayoutTemplate *currentLayout = [LDOLayoutTemplate new];
+    currentLayout.templateView = rootTemplateView;
     
-    NSMapTable<UIView *, UIView *> *currentStateTargetToTemplate = [NSMapTable weakToWeakObjectsMapTable];
-    for (UIView *templateView in [currentState collectTemplateViews]) {
+    NSMapTable<UIView *, UIView *> *currentLayoutTargetToTemplateMap = [NSMapTable strongToStrongObjectsMapTable];
+    for (UIView *templateView in [currentLayout allTemplateViews]) {
         UIView *targetView = templateView.targetView;
         
         // capture attribute state
         [self applyAttributesFrom:targetView to:templateView];
-        
-#if DEBUG
-        NSAssert([currentStateTargetToTemplate objectForKey:targetView] == nil, @"Target view referenced more than once: %@", targetView);
-#endif
-        [currentStateTargetToTemplate setObject:templateView forKey:targetView];
+
+        [currentLayoutTargetToTemplateMap setObject:templateView forKey:targetView];
     }
     
     // add constraints of `layoutTemplate` target views to `currentState` template views with the same target
     // this essentially captures the current set of constraints
-    NSSet<UIView *> *targetViews = [layoutTemplate targetViewsFrom:[layoutTemplate collectTemplateViews]];
-    NSArray<NSLayoutConstraint *> *targetConstraints = [layoutTemplate relevantConstraintsFor:targetViews];
+    NSSet<UIView *> *targetViews = [self.class targetViewsFor:[layoutTemplate allTemplateViews]];
+    NSSet<NSLayoutConstraint *> *targetConstraints = [self.class relevantConstraintsFor:targetViews];
     NSMutableArray<NSLayoutConstraint *> *currentStateConstraints = [NSMutableArray new];
     for (NSLayoutConstraint *targetConstraint in targetConstraints) {
-        UIView *firstItem = targetConstraint.firstItem ? [currentStateTargetToTemplate objectForKey:targetConstraint.firstItem] : nil;
-        UIView *secondItem = targetConstraint.secondItem ? [currentStateTargetToTemplate objectForKey:targetConstraint.secondItem] : nil;
+        UIView *firstItem = targetConstraint.firstItem ? [currentLayoutTargetToTemplateMap objectForKey:targetConstraint.firstItem] : nil;
+        UIView *secondItem = targetConstraint.secondItem ? [currentLayoutTargetToTemplateMap objectForKey:targetConstraint.secondItem] : nil;
         
         NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:firstItem
                                                                       attribute:targetConstraint.firstAttribute
@@ -85,49 +83,29 @@
     
     [NSLayoutConstraint activateConstraints:currentStateConstraints];
     
-    return currentState;
+    return currentLayout;
 }
 
-- (NSSet<UIView *> *)collectTemplateViews
-{
-    NSMutableSet<UIView *> *templateViews = [NSMutableSet new];
-    
-    [self collectTemplateViewsInto:templateViews startingWith:self.templateView];
-    
-    return [templateViews copy];
-}
-
-- (void)collectTemplateViewsInto:(NSMutableSet<UIView *> *)set startingWith:(UIView *)templateView
-{
-    if (templateView.targetView) {
-        [set addObject:templateView];
-    }
-    
-    for (UIView *subview in templateView.subviews) {
-        [self collectTemplateViewsInto:set startingWith:subview];
-    }
-}
-
-- (NSSet<UIView *> *)targetViewsFrom:(NSSet<UIView *> *)templateViews
++ (NSSet<UIView *> *)targetViewsFor:(NSSet<UIView *> *)templateViews
 {
     NSMutableSet<UIView *> *targetViews = [NSMutableSet new];
     
     for (UIView *templateView in templateViews) {
         UIView *targetView = templateView.targetView;
         
-#ifdef DEBUG
-        NSAssert(![targetViews containsObject:targetView], @"Target view referenced more than once: %@", targetView);
-#endif
-
+        if ([targetViews containsObject:targetView]) {
+            NSLog(@"LDOLayoutTemplate configuration error: Target view referenced more than once: %@", targetView);
+        }
+        
         [targetViews addObject:targetView];
     }
     
     return [targetViews copy];
 }
 
-- (NSArray<NSLayoutConstraint *> *)relevantConstraintsFor:(NSSet<UIView *> *)views
++ (NSSet<NSLayoutConstraint *> *)relevantConstraintsFor:(NSSet<UIView *> *)views
 {
-    NSMutableArray<NSLayoutConstraint *> *constraints = [NSMutableArray new];
+    NSMutableSet<NSLayoutConstraint *> *constraints = [NSMutableSet new];
     
     for (UIView *view in views) {
         for (NSLayoutConstraint *constraint in view.constraints) {
@@ -147,6 +125,26 @@
     return [constraints copy];
 }
 
+- (NSSet<UIView *> *)allTemplateViews
+{
+    NSMutableSet<UIView *> *templateViews = [NSMutableSet new];
+    
+    [self addTemplateViewsIn:self.templateView to:templateViews];
+    
+    return [templateViews copy];
+}
+
+- (void)addTemplateViewsIn:(UIView *)templateView to:(NSMutableSet<UIView *> *)templateViews
+{
+    if (templateView.targetView) {
+        [templateViews addObject:templateView];
+    }
+    
+    for (UIView *subview in templateView.subviews) {
+        [self addTemplateViewsIn:subview to:templateViews];
+    }
+}
+
 - (void)apply
 {
     [self applyConstraints];
@@ -155,14 +153,15 @@
 
 - (void)applyConstraints
 {
-    NSSet<UIView *> *templateViews = [self collectTemplateViews];
-    NSSet<UIView *> *targetViews = [self targetViewsFrom:templateViews];
+    NSSet<UIView *> *templateViews = [self allTemplateViews];
+    NSSet<UIView *> *targetViews = [self.class targetViewsFor:templateViews];
     
     // collect all constraints between target views (to be deactivated)
-    NSArray<NSLayoutConstraint *> *currentConstraints = [self relevantConstraintsFor:targetViews];
+    NSSet<NSLayoutConstraint *> *currentConstraints = [self.class relevantConstraintsFor:targetViews];
+    [NSLayoutConstraint deactivateConstraints:currentConstraints.allObjects];
     
     // re-create constraints between template views for target views
-    NSArray<NSLayoutConstraint *> *templateConstraints = [self relevantConstraintsFor:templateViews];
+    NSSet<NSLayoutConstraint *> *templateConstraints = [self.class relevantConstraintsFor:templateViews];
     
     NSMutableArray<NSLayoutConstraint *> *newConstraints = [NSMutableArray new];
     for (NSLayoutConstraint *templateConstraint in templateConstraints) {
@@ -180,15 +179,12 @@
         [newConstraints addObject:constraint];
     }
     
-    [NSLayoutConstraint deactivateConstraints:currentConstraints];
     [NSLayoutConstraint activateConstraints:newConstraints];
 }
 
 - (void)applyAttributes
 {
-    NSSet<UIView *> *templateViews = [self collectTemplateViews];
-    
-    for (UIView *templateView in templateViews) {
+    for (UIView *templateView in [self allTemplateViews]) {
         [self.class applyAttributesFrom:templateView to:templateView.targetView];
     }
 }
