@@ -43,14 +43,12 @@
     
     UIView *rootTemplateView = [[layoutTemplate.templateView class] new];
     rootTemplateView.translatesAutoresizingMaskIntoConstraints = NO;
-    rootTemplateView.frame = layoutTemplate.destinationView.frame;
     rootTemplateView.targetView = layoutTemplate.templateView.targetView;
     
     [self copyViewHierarchyFromRootView:layoutTemplate.templateView toRootView:rootTemplateView];
     
     LDOLayoutTemplate *currentState = [LDOLayoutTemplate new];
     currentState.templateView = rootTemplateView;
-    currentState.destinationView = layoutTemplate.destinationView;
     
     NSMapTable<UIView *, UIView *> *currentStateTargetToTemplate = [NSMapTable weakToWeakObjectsMapTable];
     for (UIView *templateView in [currentState collectTemplateViews]) {

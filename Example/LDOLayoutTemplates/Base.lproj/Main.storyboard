@@ -147,13 +147,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="9xG-sC-QFc" userLabel="First Layout" customClass="LDOLayoutTemplate">
                     <connections>
-                        <outlet property="destinationView" destination="TpU-gO-2f1" id="cDo-Mu-uAx"/>
                         <outlet property="templateView" destination="6s9-Sz-gIn" id="EqP-8j-ngI"/>
                     </connections>
                 </customObject>
                 <customObject id="rem-WP-CuH" customClass="LDOLayoutTemplate">
                     <connections>
-                        <outlet property="destinationView" destination="TpU-gO-2f1" id="zdI-n8-0qc"/>
                         <outlet property="templateView" destination="YoY-kB-NBA" id="Tvz-M0-E2L"/>
                     </connections>
                 </customObject>
@@ -285,13 +283,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MbB-AD-yhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="bKl-Mh-nEJ" userLabel="First Layout" customClass="LDOLayoutTemplate">
                     <connections>
-                        <outlet property="destinationView" destination="xbA-xn-mFA" id="ldt-hw-VX6"/>
                         <outlet property="templateView" destination="7KZ-ez-mMS" id="rKa-ey-ksr"/>
                     </connections>
                 </customObject>
                 <customObject id="IOJ-gi-7sr" customClass="LDOLayoutTemplate">
                     <connections>
-                        <outlet property="destinationView" destination="xbA-xn-mFA" id="5CC-rr-8iN"/>
                         <outlet property="templateView" destination="z6P-tR-Fdy" id="Cyq-kg-QfG"/>
                     </connections>
                 </customObject>
@@ -2190,13 +2186,11 @@ To see the content of "Tile Container" rearranging during rotation, the scroll v
                 </view>
                 <customObject id="n6a-KS-dCE" customClass="LDOLayoutTemplate">
                     <connections>
-                        <outlet property="destinationView" destination="le9-70-w4u" id="g13-6j-Pc0"/>
                         <outlet property="templateView" destination="SFg-lm-aYh" id="Nxm-y5-zDs"/>
                     </connections>
                 </customObject>
                 <customObject id="Mk0-52-bq1" customClass="LDOLayoutTemplate">
                     <connections>
-                        <outlet property="destinationView" destination="le9-70-w4u" id="0vY-2r-PT4"/>
                         <outlet property="templateView" destination="zSf-Ld-Ocd" id="C04-nW-vJT"/>
                     </connections>
                 </customObject>
