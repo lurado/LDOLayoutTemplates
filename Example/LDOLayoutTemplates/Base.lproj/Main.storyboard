@@ -381,10 +381,10 @@ Tap “Toggle Size” on the right, or rotate the device to transition between l
                                                                 </attributes>
                                                             </fragment>
                                                             <fragment>
-                                                                <mutableString key="content">
+                                                                <string key="content">
 The storyboard of this app contains a UIViewController with a regular view, plus two variations, each with their own layout template: “Portrait Large List Layout” and “Landscape Large List Layout” (see the two view objects in the Document Outline view on the left).
 
-Every view that changes between layouts needs to be included in the template, as do all of the views that it are part of its AutoLayout constraints. Therefore the layout template views replicate the view hierarchy down to the colored rectangles with varying constraints between them. </mutableString>
+Every view that changes between layouts needs to be included in the template, as do all of the views that it are part of its AutoLayout constraints. Therefore the layout template views replicate the view hierarchy down to the colored rectangles with varying constraints between them. </string>
                                                                 <attributes>
                                                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                     <font key="NSFont" size="14" name="HelveticaNeue"/>
@@ -1533,7 +1533,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cml-Ak-ofa" userLabel="Events Container">
                             <rect key="frame" x="15" y="341" width="1518" height="668"/>
-                            <color key="backgroundColor" red="0.14117647059999999" green="0.70980392160000005" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.27450980392156865" green="0.76862745098039209" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <outlet property="targetView" destination="jSo-2l-cGi" id="3z7-iR-CGl"/>
                             </connections>
@@ -1953,7 +1953,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMV-BA-1IR" userLabel="Events Container">
                             <rect key="frame" x="270" y="15" width="711" height="1098"/>
-                            <color key="backgroundColor" red="0.14117647059999999" green="0.70980392160000005" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.27450980392156865" green="0.76862745098039209" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <outlet property="targetView" destination="jSo-2l-cGi" id="2Wt-KE-DOz"/>
                             </connections>
