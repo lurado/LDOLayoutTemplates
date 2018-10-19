@@ -38,14 +38,6 @@
                      }];
 }
 
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
-{
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        [self applyFirst];
-    } completion:nil];
-}
-
 - (IBAction)reset
 {
     [self applyLayoutTemplate:self.defaultLayout];

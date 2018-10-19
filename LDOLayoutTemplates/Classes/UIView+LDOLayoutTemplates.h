@@ -10,11 +10,11 @@
 
 @interface UIView (LDOLayoutTemplates)
 
-@property (nonatomic, weak) IBOutlet UIView *targetView;
+@property (nullable, nonatomic, weak) IBOutlet UIView *targetView;
 
-// Add an Inspector property to take a comma separated list of attributes that will be transferred
-@property (nonatomic) IBInspectable NSString *transferredTemplateAttributeKeyPaths;
+// this Inspector property takes a comma-separated list of attributes that will be transferred
+@property (nullable, nonatomic) IBInspectable NSString *transferredTemplateAttributeKeyPaths;
 
-- (NSArray<NSString *> *)transferableTemplateAttributeKeyPaths;
+- (nonnull NSArray<NSString *> *)transferableTemplateAttributeKeyPaths;
 
 @end
