@@ -42,7 +42,7 @@
 		61B9669C366D83089E7BE20A /* Pods-LDOLayoutTemplates_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDOLayoutTemplates_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LDOLayoutTemplates_Example/Pods-LDOLayoutTemplates_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9E8FFD941EB3924700669FE0 /* LDOLayoutTemplates.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = LDOLayoutTemplates.podspec; path = ../LDOLayoutTemplates.podspec; sourceTree = "<group>"; };
+		9E8FFD941EB3924700669FE0 /* LDOLayoutTemplates.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = LDOLayoutTemplates.podspec; path = ../LDOLayoutTemplates.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EF5367A2173724F00ED3C67 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		BF5F63140F4E3EC03BE2FCAC /* Pods_LDOLayoutTemplates_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LDOLayoutTemplates_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
