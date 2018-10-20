@@ -1473,12 +1473,12 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                     <navigationItem key="navigationItem" title="Dashboard Example" id="wKF-30-nXN"/>
                     <size key="freeformSize" width="868" height="1228"/>
                     <connections>
-                        <outlet property="landscapeLargeListLayout" destination="SFg-lm-aYh" id="hnR-Rg-sc2"/>
-                        <outlet property="portraitLargeListLayout" destination="zSf-Ld-Ocd" id="V2q-0B-zdq"/>
+                        <outlet property="landscapeLargeListLayout" destination="zSf-Ld-Ocd" id="qmH-U7-JzM"/>
+                        <outlet property="portraitLargeListLayout" destination="SFg-lm-aYh" id="uL3-KT-zjI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOD-5v-pPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="SFg-lm-aYh" userLabel="Portrait Large Events Layout" customClass="LDOLayoutTemplate">
+                <view contentMode="scaleToFill" id="SFg-lm-aYh" customClass="LDOLayoutTemplate">
                     <rect key="frame" x="0.0" y="0.0" width="1548" height="1024"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -1898,7 +1898,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                         <outlet property="targetView" destination="le9-70-w4u" id="GyD-uD-mhc"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" id="zSf-Ld-Ocd" userLabel="Landscape Large Events Layout" customClass="LDOLayoutTemplate">
+                <view contentMode="scaleToFill" id="zSf-Ld-Ocd" customClass="LDOLayoutTemplate">
                     <rect key="frame" x="0.0" y="0.0" width="996" height="1128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
