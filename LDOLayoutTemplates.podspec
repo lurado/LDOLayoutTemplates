@@ -1,7 +1,7 @@
 # see http://guides.cocoapods.org/syntax/podspec.html
 Pod::Spec.new do |s|
   s.name         = "LDOLayoutTemplates"
-  s.version      = "0.9.3"
+  s.version      = "1.0.0"
   s.summary      = "Design multiple layouts of the same view in IB, and transition between them."
 
   s.description  = <<-DESC
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   DESC
 
   s.homepage    = "https://github.com/lurado/LDOLayoutTemplates"
-  s.screenshots = "https://github.com/lurado/LDOLayoutTemplates/blob/master/Screenshots/DashboardExample.gif"
+  s.screenshots = "https://raw.github.com/lurado/LDOLayoutTemplates/blob/master/Screenshots/DashboardExample.gif"
   s.license     = { type: "MIT", file: "LICENSE" }
   s.author      = { "Julian Raschke und Sebastian Ludwig GbR" => "info@lurado.com" }
   s.source      = { git: "https://github.com/lurado/LDOLayoutTemplates.git", tag: s.version.to_s }
