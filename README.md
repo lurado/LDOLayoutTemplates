@@ -137,4 +137,4 @@ Raschke & Ludwig GbR, https://www.lurado.com/
 ## License
 
 LDOLayoutTemplates is available under the MIT license.
-See the LICENSE file for more information.
+See the [LICENSE](LICENSE) file for more information.
