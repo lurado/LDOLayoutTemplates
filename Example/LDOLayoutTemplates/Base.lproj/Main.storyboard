@@ -75,7 +75,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="LDOLayoutTemplates" id="6Yi-lv-Yb6">
-                        <barButtonItem key="backBarButtonItem" title="Selection" id="4Vq-0T-7B4"/>
+                        <barButtonItem key="backBarButtonItem" title="Overview" id="4Vq-0T-7B4"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UX9-nK-MyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,8 +113,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yE1-mp-2Kg">
-                                        <rect key="frame" x="151.5" y="0.0" width="30" height="30"/>
-                                        <state key="normal" title="Big"/>
+                                        <rect key="frame" x="140.5" y="0.0" width="52" height="30"/>
+                                        <state key="normal" title="Big Box"/>
                                         <connections>
                                             <action selector="applyFirst" destination="whP-gf-Uak" eventType="touchUpInside" id="Jf5-VX-FQT"/>
                                         </connections>
@@ -140,22 +140,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Simple Example" id="12z-gB-cpn"/>
                     <connections>
-                        <outlet property="firstLayout" destination="9xG-sC-QFc" id="EjZ-73-UF9"/>
-                        <outlet property="secondLayout" destination="rem-WP-CuH" id="BF5-00-mUD"/>
+                        <outlet property="firstLayout" destination="6s9-Sz-gIn" id="tZf-KO-pWa"/>
+                        <outlet property="secondLayout" destination="YoY-kB-NBA" id="8gj-3h-7MJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="9xG-sC-QFc" userLabel="First Layout" customClass="LDOLayoutTemplate">
-                    <connections>
-                        <outlet property="templateView" destination="6s9-Sz-gIn" id="EqP-8j-ngI"/>
-                    </connections>
-                </customObject>
-                <customObject id="rem-WP-CuH" customClass="LDOLayoutTemplate">
-                    <connections>
-                        <outlet property="templateView" destination="YoY-kB-NBA" id="Tvz-M0-E2L"/>
-                    </connections>
-                </customObject>
-                <view contentMode="scaleToFill" id="6s9-Sz-gIn" userLabel="Big Template">
+                <view contentMode="scaleToFill" id="6s9-Sz-gIn" userLabel="Big Template" customClass="LDOLayoutTemplate">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -181,7 +171,7 @@
                         <outlet property="targetView" destination="TpU-gO-2f1" id="kBU-1g-Bw0"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" id="YoY-kB-NBA" userLabel="Right Template">
+                <view contentMode="scaleToFill" id="YoY-kB-NBA" userLabel="Right Template" customClass="LDOLayoutTemplate">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -276,22 +266,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Attributes" id="wbK-65-tx8"/>
                     <connections>
-                        <outlet property="firstLayout" destination="bKl-Mh-nEJ" id="fCJ-Cy-3jR"/>
-                        <outlet property="secondLayout" destination="IOJ-gi-7sr" id="sGA-Rq-wau"/>
+                        <outlet property="firstLayout" destination="7KZ-ez-mMS" id="pwi-Aw-2Lv"/>
+                        <outlet property="secondLayout" destination="z6P-tR-Fdy" id="r3x-qb-wKe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MbB-AD-yhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="bKl-Mh-nEJ" userLabel="First Layout" customClass="LDOLayoutTemplate">
-                    <connections>
-                        <outlet property="templateView" destination="7KZ-ez-mMS" id="rKa-ey-ksr"/>
-                    </connections>
-                </customObject>
-                <customObject id="IOJ-gi-7sr" customClass="LDOLayoutTemplate">
-                    <connections>
-                        <outlet property="templateView" destination="z6P-tR-Fdy" id="Cyq-kg-QfG"/>
-                    </connections>
-                </customObject>
-                <view contentMode="scaleToFill" id="7KZ-ez-mMS" userLabel="50% Template">
+                <view contentMode="scaleToFill" id="7KZ-ez-mMS" userLabel="50% Template" customClass="LDOLayoutTemplate">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -319,7 +299,7 @@
                         <outlet property="targetView" destination="xbA-xn-mFA" id="D7f-et-O6I"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" id="z6P-tR-Fdy" userLabel="0% Template">
+                <view contentMode="scaleToFill" id="z6P-tR-Fdy" userLabel="0% Template" customClass="LDOLayoutTemplate">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -350,7 +330,7 @@
             </objects>
             <point key="canvasLocation" x="332" y="-144"/>
         </scene>
-        <!--Complex Example-->
+        <!--Dashboard Example-->
         <scene sceneID="LaS-l9-e2v">
             <objects>
                 <viewController id="urE-sZ-FeA" customClass="DashboardViewController" customModule="LDOLayoutTemplates_Example" customModuleProvider="target" sceneMemberID="viewController">
@@ -365,54 +345,184 @@
                                         <rect key="frame" x="0.0" y="0.0" width="328" height="1134"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xh4-m5-EN9">
-                                                <rect key="frame" x="0.0" y="0.0" width="328" height="875"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="328" height="895"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaC-CQ-Kuk">
-                                                        <rect key="frame" x="20" y="8" width="288" height="839"/>
+                                                        <rect key="frame" x="20" y="8" width="288" height="859"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Interactions">
                                                                 <attributes>
-                                                                    <color key="NSColor" red="0.13333" green="0.13333" blue="0.13333" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                     <font key="NSFont" size="24" name="HelveticaNeue"/>
+                                                                    <font key="NSOriginalFont" size="24" name="HelveticaNeue"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
                                                             <fragment>
                                                                 <string key="content">
 
-• Tap "Toggle Size" on the right to switch between modes
-• Rotate the device
+Tap “Toggle Size” on the right, or rotate the device to transition between layouts.
 
 
 </string>
                                                                 <attributes>
-                                                                    <color key="NSColor" red="0.13333" green="0.13333" blue="0.13333" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                     <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
                                                             <fragment>
-                                                                <string key="content">How it's done
+                                                                <string key="content">How It Works
 </string>
                                                                 <attributes>
-                                                                    <color key="NSColor" red="0.13333" green="0.13333" blue="0.13333" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                     <font key="NSFont" size="24" name="HelveticaNeue"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
                                                             <fragment>
-                                                                <string key="content">
-There's a real UIViewController view with a base layout and two variations, each with their own layout template: "Portrait Large Blue Layout" and "Landscape Large Blue Layout" (check the four items in the Document Outline view on the left).
+                                                                <mutableString key="content">
+The storyboard of this app contains a UIViewController with a regular view, plus two variations, each with their own layout template: “Portrait Large List Layout” and “Landscape Large List Layout” (see the two view objects in the Document Outline view on the left).
 
-Every view that changes between layouts needs to be part of the template, so do all it's superviews and any other views it is constraint to. Therefore the layout template views replicate the view hierarchy down to the colored rectangles with varying constraints between them. It's important to connect the "targetView" outlet of all views in the layout templates to the corresponding view in the real view!
-
-The four "Details Container" are only visible in the "Portrait Large Blue Layout". This is accomplished by setting their alpha to 0 in the other layouts and defining "alpha" as "Transferred Template Attribute Key Paths" in all three templates (if you would skip one template, applying this template would not change the alpha and leave it at whatever value it currently is).
-
-Similarly the scaling of the Customer Satisfaction, Orders, Churn Rate and Runway values is achieved by setting "layer.transform.scale.x" and "layer.transform.scale.y" to 0.5 via User Defined Runtime Attributes in the "Portrait Large Blue Layout" and adding both keys to "Transferred Template Attribute Key Paths".
-
-To see the content of "Tile Container" rearranging during rotation, the scroll views "Clip To Bounds" is deactivated - very unusual but possible in this particular layout.</string>
+Every view that changes between layouts needs to be included in the template, as do all of the views that it are part of its AutoLayout constraints. Therefore the layout template views replicate the view hierarchy down to the colored rectangles with varying constraints between them. </mutableString>
                                                                 <attributes>
-                                                                    <color key="NSColor" red="0.13333" green="0.13333" blue="0.13333" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="Note:">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="HelveticaNeue-MediumItalic"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content=" ">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="HelveticaNeue-Italic"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="Be sure to connect the ">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="targetView">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="Courier"/>
+                                                                    <font key="NSOriginalFont" size="14" name="Courier"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment>
+                                                                <string key="content"> outlet of all views in the layout templates to the corresponding view in the regular view.
+
+The four bar charts are only visible in the “Portrait Large List Layout”. This is accomplished by setting their </string>
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="alpha">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="Courier"/>
+                                                                    <font key="NSOriginalFont" size="14" name="Courier"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content=" property to 0 in the other layouts, and by including ">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="alpha">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="Courier"/>
+                                                                    <font key="NSOriginalFont" size="14" name="Courier"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment>
+                                                                <string key="content"> in the “Transferred Template Attribute Key Paths” in all three templates. (If it was missing from one view in the template, applying this template would not change the </string>
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="alpha">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="Courier"/>
+                                                                    <font key="NSOriginalFont" size="14" name="Courier"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment>
+                                                                <string key="content"> property.)
+
+Similarly, the scaling of the Customer Satisfaction, Orders, Churn Rate and Runway values is achieved by setting </string>
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="layer.transform.scale.x">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="Courier"/>
+                                                                    <font key="NSOriginalFont" size="14" name="Courier"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content=" and ">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="layer.transform.scale.y">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="Courier"/>
+                                                                    <font key="NSOriginalFont" size="14" name="Courier"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content=" to 0.5 via User Defined Runtime Attributes in the “Portrait Large List Layout”, and by adding ">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="layer.transform">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="14" name="Courier"/>
+                                                                    <font key="NSOriginalFont" size="14" name="Courier"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment>
+                                                                <string key="content"> to “Transferred Template Attribute Key Paths”.
+
+The scroll view on the left has the “Clip to Bounds” property deactivated, which is unusual, but allows the dashboard tiles to remain visible during device rotation.</string>
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                     <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
@@ -622,7 +732,7 @@ To see the content of "Tile Container" rearranging during rotation, the scroll v
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform.scale.y, layer.transform.scale.x"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
@@ -712,8 +822,8 @@ To see the content of "Tile Container" rearranging during rotation, the scroll v
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZ4-yU-2sX" userLabel="Active Users">
                                                 <rect key="frame" x="0.0" y="123" width="240" height="108"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk1-ox-rbt">
-                                                        <rect key="frame" x="8" y="8" width="93.5" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active Users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk1-ox-rbt">
+                                                        <rect key="frame" x="8" y="8" width="96.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -1360,15 +1470,15 @@ To see the content of "Tile Container" rearranging during rotation, the scroll v
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vuk-Ne-nKa"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Complex Example" id="wKF-30-nXN"/>
+                    <navigationItem key="navigationItem" title="Dashboard Example" id="wKF-30-nXN"/>
                     <size key="freeformSize" width="868" height="1228"/>
                     <connections>
-                        <outlet property="landscapeLargeListLayout" destination="Mk0-52-bq1" id="ZZ4-Ko-Zg4"/>
-                        <outlet property="portraitLargeListLayout" destination="n6a-KS-dCE" id="43H-8C-cfE"/>
+                        <outlet property="landscapeLargeListLayout" destination="SFg-lm-aYh" id="hnR-Rg-sc2"/>
+                        <outlet property="portraitLargeListLayout" destination="zSf-Ld-Ocd" id="V2q-0B-zdq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOD-5v-pPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="SFg-lm-aYh" userLabel="Portrait Large Events Layout">
+                <view contentMode="scaleToFill" id="SFg-lm-aYh" userLabel="Portrait Large Events Layout" customClass="LDOLayoutTemplate">
                     <rect key="frame" x="0.0" y="0.0" width="1548" height="1024"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -1449,7 +1559,7 @@ To see the content of "Tile Container" rearranging during rotation, the scroll v
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.transform.scale.x">
                                                             <real key="value" value="0.5"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform.scale.y, layer.transform.scale.x"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform"/>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <outlet property="targetView" destination="nfw-8v-v2N" id="y67-L7-HFb"/>
@@ -1788,7 +1898,7 @@ To see the content of "Tile Container" rearranging during rotation, the scroll v
                         <outlet property="targetView" destination="le9-70-w4u" id="GyD-uD-mhc"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" id="zSf-Ld-Ocd" userLabel="Landscape Large Events Layout">
+                <view contentMode="scaleToFill" id="zSf-Ld-Ocd" userLabel="Landscape Large Events Layout" customClass="LDOLayoutTemplate">
                     <rect key="frame" x="0.0" y="0.0" width="996" height="1128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -1863,7 +1973,7 @@ To see the content of "Tile Container" rearranging during rotation, the scroll v
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform.scale.y, layer.transform.scale.x"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform"/>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <outlet property="targetView" destination="nfw-8v-v2N" id="8yz-dW-up9"/>
@@ -2184,16 +2294,6 @@ To see the content of "Tile Container" rearranging during rotation, the scroll v
                         <outlet property="targetView" destination="le9-70-w4u" id="Raj-5d-3bj"/>
                     </connections>
                 </view>
-                <customObject id="n6a-KS-dCE" customClass="LDOLayoutTemplate">
-                    <connections>
-                        <outlet property="templateView" destination="SFg-lm-aYh" id="Nxm-y5-zDs"/>
-                    </connections>
-                </customObject>
-                <customObject id="Mk0-52-bq1" customClass="LDOLayoutTemplate">
-                    <connections>
-                        <outlet property="templateView" destination="zSf-Ld-Ocd" id="C04-nW-vJT"/>
-                    </connections>
-                </customObject>
             </objects>
             <point key="canvasLocation" x="3032" y="35.982008995502248"/>
         </scene>

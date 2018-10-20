@@ -40,19 +40,16 @@
 
 + (instancetype)layoutTemplateWithCurrentStateForViewsInTemplate:(LDOLayoutTemplate *)layoutTemplate
 {
-    NSAssert(layoutTemplate.templateView, @"Template view of base template must not be nil");
+    NSParameterAssert(layoutTemplate);
     
-    UIView *rootTemplateView = [layoutTemplate.templateView.class new];
-    rootTemplateView.translatesAutoresizingMaskIntoConstraints = NO;
-    rootTemplateView.targetView = layoutTemplate.templateView.targetView;
+    LDOLayoutTemplate *currentLayoutTemplate = [LDOLayoutTemplate new];
+    currentLayoutTemplate.translatesAutoresizingMaskIntoConstraints = NO;
+    currentLayoutTemplate.targetView = layoutTemplate.targetView;
     
-    [self copyViewHierarchyFromView:layoutTemplate.templateView toView:rootTemplateView];
-    
-    LDOLayoutTemplate *currentLayout = [LDOLayoutTemplate new];
-    currentLayout.templateView = rootTemplateView;
+    [self copyViewHierarchyFromView:layoutTemplate toView:currentLayoutTemplate];
     
     NSMapTable<UIView *, UIView *> *currentLayoutTargetToTemplateMap = [NSMapTable strongToStrongObjectsMapTable];
-    for (UIView *templateView in [currentLayout allTemplateViews]) {
+    for (UIView *templateView in [currentLayoutTemplate allTemplateViews]) {
         UIView *targetView = templateView.targetView;
         
         // capture attribute state
@@ -61,8 +58,8 @@
         [currentLayoutTargetToTemplateMap setObject:templateView forKey:targetView];
     }
     
-    // add constraints of `layoutTemplate` target views to `currentState` template views with the same target
-    // this essentially captures the current set of constraints
+    // Add constraints of `layoutTemplate` target views to `currentState` template views with the same target
+    // This captures the current set of user-defined constraints
     NSSet<UIView *> *targetViews = [self.class targetViewsFor:[layoutTemplate allTemplateViews]];
     NSSet<NSLayoutConstraint *> *targetConstraints = [self.class relevantConstraintsFor:targetViews];
     NSMutableArray<NSLayoutConstraint *> *currentStateConstraints = [NSMutableArray new];
@@ -84,7 +81,7 @@
     
     [NSLayoutConstraint activateConstraints:currentStateConstraints];
     
-    return currentLayout;
+    return currentLayoutTemplate;
 }
 
 + (NSSet<UIView *> *)targetViewsFor:(NSSet<UIView *> *)templateViews
@@ -118,8 +115,8 @@
             BOOL betweenViews = [views containsObject:constraint.firstItem] && [views containsObject:constraint.secondItem];
             BOOL sizeConstraint = (constraint.firstAttribute == NSLayoutAttributeHeight || constraint.firstAttribute == NSLayoutAttributeWidth)
                 && constraint.secondItem == nil
-                && [views containsObject:constraint.firstItem]
-                && [constraint isMemberOfClass:[NSLayoutConstraint class]];
+                && [views containsObject:constraint.firstItem];
+            NSAssert(constraint.class == [NSLayoutConstraint class], @"rofl n00b");
             if (betweenViews || sizeConstraint) {
                 [constraints addObject:constraint];
             }
@@ -133,7 +130,7 @@
 {
     NSMutableSet<UIView *> *templateViews = [NSMutableSet new];
     
-    [self addTemplateViewsIn:self.templateView to:templateViews];
+    [self addTemplateViewsIn:self to:templateViews];
     
     return [templateViews copy];
 }
@@ -160,7 +157,7 @@
     NSSet<UIView *> *templateViews = [self allTemplateViews];
     NSSet<UIView *> *targetViews = [self.class targetViewsFor:templateViews];
     
-    // collect all constraints between target views (to be deactivated)
+    // remove all constraints between target views
     NSSet<NSLayoutConstraint *> *currentConstraints = [self.class relevantConstraintsFor:targetViews];
     [NSLayoutConstraint deactivateConstraints:currentConstraints.allObjects];
     

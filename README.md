@@ -2,9 +2,9 @@
 
 Visually design multiple layouts of a view in IB and easily transition between them
 
-[![Version](https://img.shields.io/cocoapods/v/LDOLayoutTemplates.svg?style=flat)](http://cocoapods.org/pods/LDOLayoutTemplates)
-[![License](https://img.shields.io/cocoapods/l/LDOLayoutTemplates.svg?style=flat)](http://cocoapods.org/pods/LDOLayoutTemplates)
-[![Platform](https://img.shields.io/cocoapods/p/LDOLayoutTemplates.svg?style=flat)](http://cocoapods.org/pods/LDOLayoutTemplates)
+[![Version](https://img.shields.io/cocoapods/v/LDOLayoutTemplates.svg?style=flat)](https://cocoapods.org/pods/LDOLayoutTemplates)
+[![License](https://img.shields.io/cocoapods/l/LDOLayoutTemplates.svg?style=flat)](https://cocoapods.org/pods/LDOLayoutTemplates)
+[![Platform](https://img.shields.io/cocoapods/p/LDOLayoutTemplates.svg?style=flat)](https://cocoapods.org/pods/LDOLayoutTemplates)
 
 ### Get this...
 
@@ -127,8 +127,8 @@ The algorithm is actually pretty simple and basically works as follows:
 
 ## Author
 
-Raschke & Ludwig GbR, http://www.lurado.com
+Raschke & Ludwig GbR, https://www.lurado.com/
 
 ## License
 
-LDOLayoutTemplates is available under the MIT license. See the LICENSE file for more info.
+LDOLayoutTemplates is available under the MIT license. See the LICENSE file for more information.
