@@ -12,9 +12,11 @@
 
 @property (nullable, nonatomic, weak) IBOutlet UIView *targetView;
 
-// this Inspector property takes a comma-separated list of attributes that will be transferred
-@property (nullable, nonatomic) IBInspectable NSString *transferredTemplateAttributeKeyPaths;
+/// Inspectable, comma-separated list of key paths that will be transferred to `targetView`.
+@property (nullable, nonatomic) IBInspectable NSString *templateAttributes;
 
-- (nonnull NSArray<NSString *> *)transferableTemplateAttributeKeyPaths;
+/// An array of key paths that will transferred to targetView when the containing layout is applied.
+/// The base implementation of this method includes the key paths from `templateAttributes`.
+- (nonnull NSArray<NSString *> *)transferredTemplateAttributeKeyPaths;
 
 @end

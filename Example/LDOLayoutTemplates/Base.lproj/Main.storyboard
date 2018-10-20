@@ -218,7 +218,7 @@
                                     <constraint firstAttribute="height" constant="300" id="I6f-mZ-n49"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="58F-WI-tXf">
@@ -282,7 +282,7 @@
                                 <constraint firstAttribute="height" constant="300" id="8Iu-3d-6jm"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <outlet property="targetView" destination="aaZ-6D-2Fi" id="90U-Xb-vp1"/>
@@ -310,7 +310,7 @@
                                 <constraint firstAttribute="height" constant="300" id="6Ez-ZR-fEc"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <outlet property="targetView" destination="aaZ-6D-2Fi" id="eYT-en-HQx"/>
@@ -381,10 +381,10 @@ Tap “Toggle Size” on the right, or rotate the device to transition between l
                                                                 </attributes>
                                                             </fragment>
                                                             <fragment>
-                                                                <mutableString key="content">
+                                                                <string key="content">
 The storyboard of this app contains a UIViewController with a regular view, plus two variations, each with their own layout template: “Portrait Large List Layout” and “Landscape Large List Layout” (see the two view objects in the Document Outline view on the left).
 
-Every view that changes between layouts needs to be included in the template, as do all of the views that it are part of its AutoLayout constraints. Therefore the layout template views replicate the view hierarchy down to the colored rectangles with varying constraints between them. </mutableString>
+Every view that changes between layouts needs to be included in the template, as do all of the views that it are part of its AutoLayout constraints. Therefore the layout template views replicate the view hierarchy down to the colored rectangles with varying constraints between them. </string>
                                                                 <attributes>
                                                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                     <font key="NSFont" size="14" name="HelveticaNeue"/>
@@ -558,7 +558,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                     <constraint firstItem="Xh4-m5-EN9" firstAttribute="width" secondItem="qYt-Hp-kzu" secondAttribute="width" id="ZfI-Xb-HMl"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
@@ -576,7 +576,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform.scale.y, layer.transform.scale.x"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="layer.transform.scale.y, layer.transform.scale.x"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>
@@ -602,7 +602,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform.scale.y, layer.transform.scale.x"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="layer.transform.scale.y, layer.transform.scale.x"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>
@@ -630,7 +630,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                     <constraint firstItem="9Dp-jC-7iB" firstAttribute="leading" secondItem="Gbn-G3-UW8" secondAttribute="leading" id="mac-wd-pM5"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSo-2l-cGi" userLabel="Events Container">
@@ -732,7 +732,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="layer.transform"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
@@ -813,7 +813,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                     <constraint firstItem="WPZ-l3-Hqx" firstAttribute="leading" secondItem="1V5-Yv-Gim" secondAttribute="leadingMargin" constant="8" id="uPG-RA-6qL"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
@@ -867,7 +867,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform.scale.y, layer.transform.scale.x"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="layer.transform.scale.y, layer.transform.scale.x"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
@@ -903,7 +903,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform.scale.y, layer.transform.scale.x"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="layer.transform.scale.y, layer.transform.scale.x"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
@@ -1005,7 +1005,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                     <constraint firstAttribute="width" constant="240" id="uGx-Cj-Kmb"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
@@ -1111,7 +1111,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                     <constraint firstItem="3gz-30-i3E" firstAttribute="leading" secondItem="AOl-xi-sEL" secondAttribute="leadingMargin" constant="8" id="tuk-by-AJ9"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
@@ -1196,7 +1196,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                     <constraint firstItem="mVP-iW-BaB" firstAttribute="leading" secondItem="IqS-EW-6fH" secondAttribute="leadingMargin" constant="8" id="pIg-CX-uGp"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
@@ -1382,7 +1382,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform.scale.y, layer.transform.scale.x"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="layer.transform.scale.y, layer.transform.scale.x"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
@@ -1489,7 +1489,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                 <constraint firstAttribute="width" constant="228" id="mY1-NB-j7O"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <outlet property="targetView" destination="qYt-Hp-kzu" id="HHe-NP-rFi"/>
@@ -1525,7 +1525,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                 <constraint firstAttribute="bottom" secondItem="Abp-aK-ifn" secondAttribute="bottom" id="w5O-jz-A09"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <outlet property="targetView" destination="Gbn-G3-UW8" id="ci5-3d-sqk"/>
@@ -1533,7 +1533,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cml-Ak-ofa" userLabel="Events Container">
                             <rect key="frame" x="15" y="341" width="1518" height="668"/>
-                            <color key="backgroundColor" red="0.14117647059999999" green="0.70980392160000005" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.27450980392156865" green="0.76862745098039209" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <outlet property="targetView" destination="jSo-2l-cGi" id="3z7-iR-CGl"/>
                             </connections>
@@ -1559,7 +1559,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.transform.scale.x">
                                                             <real key="value" value="0.5"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="layer.transform"/>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <outlet property="targetView" destination="nfw-8v-v2N" id="y67-L7-HFb"/>
@@ -1586,7 +1586,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                 <constraint firstAttribute="width" constant="300" id="pn0-vL-tdb"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <outlet property="targetView" destination="IqS-EW-6fH" id="d1Z-3g-VZq"/>
@@ -1612,7 +1612,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform.scale.y, layer.transform.scale.x"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="layer.transform.scale.y, layer.transform.scale.x"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.transform.scale.y">
                                                             <real key="value" value="0.5"/>
                                                         </userDefinedRuntimeAttribute>
@@ -1645,7 +1645,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                 <constraint firstAttribute="width" constant="300" id="pVh-YE-VC9"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <outlet property="targetView" destination="G8G-kI-op8" id="Ufe-8o-PFA"/>
@@ -1671,7 +1671,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform.scale.y, layer.transform.scale.x"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="layer.transform.scale.y, layer.transform.scale.x"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.transform.scale.y">
                                                             <real key="value" value="0.5"/>
                                                         </userDefinedRuntimeAttribute>
@@ -1704,7 +1704,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                 <constraint firstAttribute="width" constant="300" id="ide-Eg-jKr"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <outlet property="targetView" destination="1V5-Yv-Gim" id="rDS-eB-gl6"/>
@@ -1730,7 +1730,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform.scale.y, layer.transform.scale.x"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="layer.transform.scale.y, layer.transform.scale.x"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.transform.scale.y">
                                                             <real key="value" value="0.5"/>
                                                         </userDefinedRuntimeAttribute>
@@ -1763,7 +1763,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                 <constraint firstAttribute="height" constant="150" id="l4g-bs-Ec8"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <outlet property="targetView" destination="AOl-xi-sEL" id="feU-sN-bDS"/>
@@ -1909,7 +1909,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                 <constraint firstAttribute="width" constant="484" id="nC8-9m-W8i"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <outlet property="targetView" destination="qYt-Hp-kzu" id="3fC-4l-zTq"/>
@@ -1945,7 +1945,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                 <constraint firstAttribute="trailing" secondItem="9pa-CD-OgG" secondAttribute="trailing" id="tj2-Xa-EfX"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <outlet property="targetView" destination="Gbn-G3-UW8" id="COP-NZ-SKH"/>
@@ -1953,7 +1953,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMV-BA-1IR" userLabel="Events Container">
                             <rect key="frame" x="270" y="15" width="711" height="1098"/>
-                            <color key="backgroundColor" red="0.14117647059999999" green="0.70980392160000005" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.27450980392156865" green="0.76862745098039209" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <outlet property="targetView" destination="jSo-2l-cGi" id="2Wt-KE-DOz"/>
                             </connections>
@@ -1973,7 +1973,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="layer.transform"/>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <outlet property="targetView" destination="nfw-8v-v2N" id="8yz-dW-up9"/>
@@ -2000,7 +2000,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                 <constraint firstAttribute="width" constant="240" id="hAU-5P-kJG"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <outlet property="targetView" destination="1V5-Yv-Gim" id="qeG-mc-EVg"/>
@@ -2026,7 +2026,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform.scale.y, layer.transform.scale.x"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="layer.transform.scale.y, layer.transform.scale.x"/>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <outlet property="targetView" destination="2nQ-4n-Drd" id="AMg-Gw-dH3"/>
@@ -2054,7 +2054,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform.scale.y, layer.transform.scale.x"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="layer.transform.scale.y, layer.transform.scale.x"/>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <outlet property="targetView" destination="HKZ-S1-Alp" id="Fye-NW-hJW"/>
@@ -2081,7 +2081,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                 <constraint firstAttribute="height" constant="153" id="lgI-Hu-in5"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <outlet property="targetView" destination="G8G-kI-op8" id="J3h-bI-YIS"/>
@@ -2106,7 +2106,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                 <constraint firstAttribute="width" constant="240" id="ag6-gL-qWj"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <outlet property="targetView" destination="AOl-xi-sEL" id="Rgn-wV-hoa"/>
@@ -2131,7 +2131,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                 <constraint firstAttribute="width" constant="240" id="RyK-gk-HFx"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="alpha"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="alpha"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <outlet property="targetView" destination="IqS-EW-6fH" id="KmP-1E-9gf"/>
@@ -2201,7 +2201,7 @@ The scroll view on the left has the “Clip to Bounds” property deactivated, w
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="transferredTemplateAttributeKeyPaths" value="layer.transform.scale.y, layer.transform.scale.x"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="templateAttributes" value="layer.transform.scale.y, layer.transform.scale.x"/>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <outlet property="targetView" destination="sPe-6v-8ik" id="4qF-tk-lEs"/>

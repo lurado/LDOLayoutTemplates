@@ -21,24 +21,24 @@
     objc_setAssociatedObject(self, @selector(targetView), targetView, OBJC_ASSOCIATION_ASSIGN);
 }
 
-- (NSString *)transferredTemplateAttributeKeyPaths
+- (NSString *)templateAttributes
 {
-    return objc_getAssociatedObject(self, @selector(transferredTemplateAttributeKeyPaths));
+    return objc_getAssociatedObject(self, @selector(templateAttributes));
 }
 
-- (void)setTransferredTemplateAttributeKeyPaths:(NSString *)transferredTemplateAttributeKeyPaths
+- (void)setTemplateAttributes:(NSString *)templateAttributes
 {
-    BOOL isEmpty = [transferredTemplateAttributeKeyPaths stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length == 0;
-    NSString *keyPaths = isEmpty ? nil : transferredTemplateAttributeKeyPaths;
-    objc_setAssociatedObject(self, @selector(transferredTemplateAttributeKeyPaths), keyPaths, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    BOOL isEmpty = [templateAttributes stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length == 0;
+    NSString *keyPaths = isEmpty ? nil : templateAttributes;
+    objc_setAssociatedObject(self, @selector(templateAttributes), keyPaths, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (NSArray<NSString *> *)transferableTemplateAttributeKeyPaths
+- (NSArray<NSString *> *)transferredTemplateAttributeKeyPaths
 {
     NSMutableArray<NSString *> *keys = [NSMutableArray new];
-    // we need to transfer the comma separated list as well, otherwise the views in the created default/current layout will miss it
-    [keys addObject:@"transferredTemplateAttributeKeyPaths"];
-    for (NSString *key in [self.transferredTemplateAttributeKeyPaths componentsSeparatedByString:@","]) {
+    // We need to transfer the comma separated list as well, otherwise views created by +[LDOLayoutTemplate layoutTemplateWithCurrentStateForViewsInTemplate:] will not transfer these key paths back.
+    [keys addObject:@"templateAttributes"];
+    for (NSString *key in [self.templateAttributes componentsSeparatedByString:@","]) {
         [keys addObject:[key stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
     }
     return [keys copy];

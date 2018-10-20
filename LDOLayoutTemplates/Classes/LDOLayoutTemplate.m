@@ -11,9 +11,9 @@
 
 @implementation LDOLayoutTemplate
 
-+ (void)applyAttributesFrom:(UIView *)source to:(UIView *)destination
++ (void)applyAttributesFromView:(UIView *)source toView:(UIView *)destination
 {
-    for (NSString *keyPath in source.transferableTemplateAttributeKeyPaths) {
+    for (NSString *keyPath in source.transferredTemplateAttributeKeyPaths) {
         [destination setValue:[source valueForKeyPath:keyPath] forKeyPath:keyPath];
     }
 }
@@ -53,13 +53,13 @@
         UIView *targetView = templateView.targetView;
         
         // capture attribute state
-        [self applyAttributesFrom:targetView to:templateView];
-
+        [self applyAttributesFromView:targetView toView:templateView];
+        
         [currentLayoutTargetToTemplateMap setObject:templateView forKey:targetView];
     }
     
-    // Add constraints of `layoutTemplate` target views to `currentState` template views with the same target
-    // This captures the current set of user-defined constraints
+    // Add constraints of `layoutTemplate` target views to `currentState` template views with the same target.
+    // This captures the current set of user-defined constraints.
     NSSet<UIView *> *targetViews = [self.class targetViewsFor:[layoutTemplate allTemplateViews]];
     NSSet<NSLayoutConstraint *> *targetConstraints = [self.class relevantConstraintsFor:targetViews];
     NSMutableArray<NSLayoutConstraint *> *currentStateConstraints = [NSMutableArray new];
@@ -107,8 +107,8 @@
     
     for (UIView *view in views) {
         for (NSLayoutConstraint *constraint in view.constraints) {
-            // Storyboard constraints have `shouldBeArchived` set to YES - we only care about these
-            // Otherwise we would mess with Apples constraints created at runtime, for example encapsulated layout constraints
+            // Storyboard constraints have `shouldBeArchived` set to YES - we only care about these.
+            // Otherwise we would mess with Apples constraints created at runtime, for example encapsulated layout constraints.
             if (!constraint.shouldBeArchived) {
                 continue;
             }
@@ -116,7 +116,6 @@
             BOOL sizeConstraint = (constraint.firstAttribute == NSLayoutAttributeHeight || constraint.firstAttribute == NSLayoutAttributeWidth)
                 && constraint.secondItem == nil
                 && [views containsObject:constraint.firstItem];
-            NSAssert(constraint.class == [NSLayoutConstraint class], @"rofl n00b");
             if (betweenViews || sizeConstraint) {
                 [constraints addObject:constraint];
             }
@@ -157,11 +156,11 @@
     NSSet<UIView *> *templateViews = [self allTemplateViews];
     NSSet<UIView *> *targetViews = [self.class targetViewsFor:templateViews];
     
-    // remove all constraints between target views
+    // Remove all constraints between target views.
     NSSet<NSLayoutConstraint *> *currentConstraints = [self.class relevantConstraintsFor:targetViews];
     [NSLayoutConstraint deactivateConstraints:currentConstraints.allObjects];
     
-    // re-create constraints between template views for target views
+    // Re-create constraints between template views for target views.
     NSSet<NSLayoutConstraint *> *templateConstraints = [self.class relevantConstraintsFor:templateViews];
     
     NSMutableArray<NSLayoutConstraint *> *newConstraints = [NSMutableArray new];
@@ -187,7 +186,7 @@
 - (void)applyAttributes
 {
     for (UIView *templateView in [self allTemplateViews]) {
-        [self.class applyAttributesFrom:templateView to:templateView.targetView];
+        [self.class applyAttributesFromView:templateView toView:templateView.targetView];
     }
 }
 
