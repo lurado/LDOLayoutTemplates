@@ -65,23 +65,24 @@ The different constraints and attributes of each view are defined by three views
 ## Motivation
 
 We love visually creating our views in Interface Builder.
-However, if a screen layout differs between orientations, or if a view has two modes (e.g. large and collapsed modes), setting up constraints and modifying them in code quickly turns into a mess.
+However, if a screen layout differs between orientations, or if a view has two modes (e.g. large and collapsed modes), setting up constraints and managing them in code quickly turns into a mess.
 Things only get worse if you have more than two variations.
 
-Wouldn't it be nice to design the different layouts separately, with an easy way to transition from one to another? 
+Wouldn't it be nice to design each layout separately, with an easy way to transition from one to another? 
 
 ## Example
 
 To run the example project, clone the repo, open the workspace in the `Example` folder, and click Run.
 Alternatively, you can use `pod try https://github.com/lurado/LDOLayoutTemplates`. 
 
-The dashboard example shown above only works on iPad.
+The dashboard example shown above is only available on iPad.
 
 ## How To
 
-1. Lay out one variation of your view — let's assume it is for landscape orientation.
-1. Drag a "View" object from the library onto your view controller scene in the left sidebar, outside of its view hierarchy.
-    Change its Custom Class to `LDOLayoutTemplate` in the right sidebar.
+1. In a storyboard, lay out your view controller's view as usual — let's assume this will be used in landscape orientation.
+1. Drag a *View* object from the library onto your view controller scene in the left sidebar, outside of its view hierarchy.
+    Change its *Custom Class* to `LDOLayoutTemplate` in the right sidebar.
+    
     This is your layout template in which you design the variation (e.g. portrait orientation).
     This view will never be shown to the user, but its constraints (and attributes, see below) will be transferred to the main view.
 1. Change the size of your template view to portrait dimensions (not really necessary, but it makes designing it easier).
@@ -89,21 +90,20 @@ The dashboard example shown above only works on iPad.
     If you copy your views, make sure to disconnect any outlets.
 1. Modify the constraints as needed.
 1. Connect the `targetView` outlet of each template view to its corresponding view in the view controller's view.
-    It's important to connect all views participating in constraints of a template. 
-    (Ignore the `targetView` outlet on views outside of your layout template.)
-1. Add and connect an outlet for the `LDOLayoutTemplate` object to your view controller.
-1. Call `apply` on that object to switch to your template, for example on orientation change. 
+    It is important that every template view participating in a constraint has this outlet connected.
+1. Add and connect an outlet for the `LDOLayoutTemplate` to your view controller.
+1. Call `apply` on the template to switch to this layout, for example on orientation change. 
     If you want to animate the transition, wrap the call to `apply` in an `UIView` animation block.
-1. If you plan to switch back to your original layout, create another instance of `LDOLayoutTemplate` (typically in `viewDidLoad`, as in the example code above).
+1. If you plan to switch back to your original layout, create another instance of `LDOLayoutTemplate` (typically in `viewDidLoad`, as shown in the example code above).
     Initialize this layout using `LDOLayoutTemplate.init(withCurrentStateForViewsIn:)`, which creates an `LDOLayoutTemplate` based on the current view configuration.
     Call `apply` on this template to restore the initial state of the view.
 1. Setup as many templates as you need, and happily switch between them.
 
 ## Attribute Changes
 
-By default, LDOLayoutTemplate only copies AutoLayout constraints from one view to another.
-However, you can also transfer attributes from each template view to its `targetView` by either adding a comma separated list of attributes to "Transferred Template Attribute Key Paths" in the Attribute Inspector in Interface Builder,
-or by overriding `transferableTemplateAttributeKeyPaths` in your `UIView` subclass.
+By default, `LDOLayoutTemplate` only copies Auto Layout constraints from one view to another.
+You can also transfer attributes from each view in a template to its `targetView` by either adding a comma separated list of attributes to *Template Attributes* in the Attribute Inspector in Interface Builder,
+or by overriding `transferredTemplateAttributeKeyPaths` in your `UIView` subclass.
 
 ## Limitations
 

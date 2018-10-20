@@ -23,6 +23,7 @@
 {
     [super viewDidLoad];
     
+    // Create a backup of the initial view contents for later restoration.
     self.defaultLayout = [LDOLayoutTemplate layoutTemplateWithCurrentStateForViewsInTemplate:self.firstLayout];
 }
 

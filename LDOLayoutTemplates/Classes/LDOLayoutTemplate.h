@@ -10,16 +10,16 @@
 
 @interface LDOLayoutTemplate : UIView
 
-// the resulting template only restores the state of views that are also part of the given template
+/// Returns a template that restores the state of views that are also part of the given `layoutTemplate`.
 + (nonnull instancetype)layoutTemplateWithCurrentStateForViewsInTemplate:(nonnull LDOLayoutTemplate *)layoutTemplate NS_SWIFT_NAME(init(withCurrentStateForViewsIn:));
 
-// same as calling `applyConstraints`, then `applyAttributes`
+/// Same as calling `applyConstraints`, then `applyAttributes`.
 - (void)apply;
 
-// copies over all constraints from `templateView` to `destinationView`
+/// Copies over all constraints to `targetView`.
 - (void)applyConstraints;
 
-// copies over all attributes from `templateView` to `destinationView`
+/// Copies over all attributes to `targetView`.
 - (void)applyAttributes;
 
 @end
